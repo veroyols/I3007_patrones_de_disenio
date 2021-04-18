@@ -1,16 +1,17 @@
 ﻿/*
  * Creado por SharpDevelop.
  * Usuario: veros
- * Fecha: 14/4/2021
- * Hora: 21:34
+ * Fecha: 15/4/2021
+ * Hora: 22:00
  * 
+ * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
  */
 using System;
 using System.Collections.Generic;
 
 namespace Practica1
 {
-	public class Pila : Coleccionable { //LIFO
+	public class Cola : Coleccionable { //FIFO
 		
 		private List<Comparable> elementos;
 	
@@ -19,14 +20,14 @@ namespace Practica1
 			get { return elementos; } //se ejecuta al leer 
 		}
 	
-		public Pila() {
+		public Cola () {
 			elementos = new List<Comparable>();  
 		}
 		
 		public int cuantos() { //cantidad de elementos
 			return elementos.Count;
 		}
-
+		
 		
 		public Comparable minimo() { //elemento de menor valor de la colección
 			if (cuantos() == 0) {
@@ -42,7 +43,7 @@ namespace Practica1
 		}
 		
 		public Comparable maximo() { //elemento de mayor valor de la colección
-			if (cuantos() == 0) { //validacion
+			if (cuantos() == 0) {
 				return null;
 			}
 			Comparable max = elementos[0];
@@ -75,6 +76,6 @@ namespace Practica1
 			return cont; 
 			}
 			return false;
-		}
+		}	
 	}
 }

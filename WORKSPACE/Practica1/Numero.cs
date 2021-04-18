@@ -18,6 +18,9 @@ namespace Practica1
 			this.valor = v;
 		}
 		
+		public Numero() { //constructor()
+		}
+		
 		public int getValor { //declara la propiedad publica
 			get {return valor; }
 		}
@@ -47,6 +50,24 @@ namespace Practica1
 				mayor = true;
 			}
 			return mayor;
-		}		
+		}
+		
+		public static void informar (Coleccionable coleccionable) { //EJERCICIO6
+			Console.WriteLine("----------INFORME----------");
+			Console.WriteLine("La coleccion posee {0} elementos.",coleccionable.cuantos());
+			Console.WriteLine("Valor minimo >> " + ((Numero)coleccionable.minimo()).getValor);
+			Console.WriteLine("Valor maximo >> " + ((Numero)coleccionable.maximo()).getValor);
+			Console.Write("Ingrese numero para verificar si esta en la coleccion>> ");
+			int a = int.Parse(Console.ReadLine());
+			Comparable comparable = new Numero (a);
+			if (coleccionable.contiene(comparable)) {
+				Console.WriteLine("El elemento leído está en la colección");
+				Console.WriteLine("--------FIN-INFORME--------\n");
+				return;
+			}
+			Console.WriteLine("El elemento leído NO está en la colección");
+			Console.WriteLine("--------FIN-INFORME--------\n");	
+		}
+		
 	}
 }
