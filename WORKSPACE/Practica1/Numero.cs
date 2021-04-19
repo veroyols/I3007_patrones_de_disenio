@@ -69,5 +69,6 @@ namespace Practica1
 			Console.WriteLine("--------FIN-INFORME--------\n");	
 		}
 		
+		
 	}
 }

@@ -29,20 +29,23 @@ namespace Practica1
 		
 		public string getNombre {
 			get { return nombre;}
+			set { value = nombre;}
 		}
+		
 		public int getDni {
 			get { return dni;}
+			set { dni = value;}
 		}
 		
 		//metodos de interfaz comparable
-		public bool sosIgual(Comparable objeto) {
+		public virtual bool sosIgual(Comparable objeto) { //para override en Alumnos
 			bool igual = false;
 			if (dni == ((Persona)objeto).getDni) {
 				igual = true;
 			}
 			return igual;
 		}		
-		public bool sosMenor(Comparable objeto) {
+		public virtual bool sosMenor(Comparable objeto) {
 			bool menor = false;
 			if (dni < ((Persona)objeto).getDni) {
 				menor = true;
@@ -50,7 +53,7 @@ namespace Practica1
 			return menor;
 		}
 
-		public bool sosMayor(Comparable objeto) {
+		public virtual bool sosMayor(Comparable objeto) {
 			bool mayor = false;
 			if (dni > ((Persona)objeto).getDni) {
 				mayor = true;
@@ -74,6 +77,6 @@ namespace Practica1
 			Console.WriteLine("El elemento leído NO está en la colección");
 			Console.WriteLine("--------FIN-INFORME--------\n");	
 		}
-		
+
 	}
 }
