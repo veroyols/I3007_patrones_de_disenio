@@ -18,77 +18,50 @@ namespace Practica1
 		public static void Main(string[] args) {	
 			// TODO: Implement Functionality Here
 			
-			//EJERCICIO7
-			Pila pila = new Pila ();
-			Cola cola = new Cola ();
-			ColeccionMultiple multiple = new ColeccionMultiple (pila, cola);
-			
 			/*Ejercicio09*/
-//			Console.WriteLine(">> Numeros: ");
-//			llenar(pila);
-//			llenar(cola);
-//
-//			imprimir(pila);
-//			imprimir(cola);
-//			
-//			Console.WriteLine("\n------------PILA-----------"); 			
-//			informar(pila);
-//			Console.WriteLine("\n------------COLA-----------"); 
-//			informar(cola); 
-//			Console.WriteLine("\n-------------CM-------------"); 
-//			informar(multiple);
+			Pila pilaNum = new Pila ();
+			Cola colaNum = new Cola ();
+			ColeccionMultiple multipleNum = new ColeccionMultiple (pilaNum, colaNum);
+			llenarNumeros (pilaNum);
+			llenarNumeros (colaNum);			
+			informar(pilaNum);
+			informar(colaNum); 
+			informar(multipleNum);
+			Console.ReadKey(true);
 			
 			/*Ejercicio 13*/			
-//			Console.WriteLine(">> Personas: ");
-//			llenarPersonas (pila);
-//			llenarPersonas(cola);
-//			imprimirPersonas(pila);
-//			imprimirPersonas(cola);
-//			informar(multiple);
+			Pila pilaPer = new Pila ();
+			Cola colaPer = new Cola ();
+			ColeccionMultiple multiplePer = new ColeccionMultiple (pilaPer, colaPer);
+			llenarPersonas (pilaPer);
+			llenarPersonas (colaPer);			
+			informar(pilaPer);
+			informar(colaPer); 
+			informar(multiplePer);
+			Console.ReadKey(true);
 			
 			/*Ejercicio 17*/
-			Console.WriteLine(">> Alumnos: ");
-			llenarAlumnos (pila);
-			llenarAlumnos(cola);
-			imprimirAlumnos(pila);
-			imprimirAlumnos(cola);
-			informar(multiple);
-
+			Pila pilaAl= new Pila ();
+			Cola colaAl = new Cola ();
+			ColeccionMultiple multipleAl = new ColeccionMultiple (pilaAl, colaAl);
+			llenarAlumnos (pilaAl);
+			llenarAlumnos (colaAl);			
+			informar(pilaAl);
+			informar(colaAl); 
+			informar(multipleAl);
 
 			Console.Write("\n Press any key to continue . . . ");
 			Console.ReadKey(true);
 		}
-
-		public static void informar (Coleccionable coleccionable) { //EJERCICIO6 / EJERCICIO13 informar coleccion de personas
-			if (((coleccionable).GetType()).Equals(new ColeccionMultiple().GetType()) ) { //es coleccion
-				if ((((ColeccionMultiple)coleccionable).pila.Elementos[0].GetType()).Equals(new Numero().GetType())) //es numero
-					Numero.informar(coleccionable);
-				if ((((ColeccionMultiple)coleccionable).pila.Elementos[0].GetType()).Equals(new Persona().GetType())) //persona
-					Persona.informar(coleccionable);
-				if ((((ColeccionMultiple)coleccionable).pila.Elementos[0].GetType()).Equals(new Alumno().GetType())) //alumno
-					Alumno.informar(coleccionable);
-			} 
-			if (((coleccionable).GetType()).Equals(new Pila().GetType()) ) { //es pila
-				if ((((Pila)coleccionable).Elementos[0].GetType()).Equals(new Numero().GetType())) //es numero
-					Numero.informar(coleccionable);
-				if ((((Pila)coleccionable).Elementos[0].GetType()).Equals(new Persona().GetType())) //persona
-					Persona.informar(coleccionable);
-				if ((((Pila)coleccionable).Elementos[0].GetType()).Equals(new Alumno().GetType())) //alumno
-					Alumno.informar(coleccionable);
-			}
-			if (((coleccionable).GetType()).Equals(new Cola().GetType()) ) { //es cola
-				if ((((Cola)coleccionable).Elementos[0].GetType()).Equals(new Numero().GetType())) //es numero
-					Numero.informar(coleccionable);
-				if ((((Cola)coleccionable).Elementos[0].GetType()).Equals(new Persona().GetType())) //persona
-					Persona.informar(coleccionable);
-				if ((((Cola)coleccionable).Elementos[0].GetType()).Equals(new Alumno().GetType())) //alumno
-					Alumno.informar(coleccionable);
-				
-			}
-		}
-
 		
-		public static void llenar(Coleccionable coleccionable){ //EJERCICIO5
+		public static void informar (Coleccionable coleccionable) { //EJERCICIO6 / EJERCICIO13 informar coleccion de personas/numeros/alumnos
+			Console.WriteLine("----------INFORME----------");
+			Console.WriteLine("La {0} posee {1} elementos.", coleccionable.ToString(), coleccionable.cuantos());
+			Console.WriteLine("Minimo >> " + (coleccionable.minimo()));
+			Console.WriteLine("Maximo >> " + (coleccionable.maximo()));
+		}
+		
+		public static void llenarNumeros(Coleccionable coleccionable){ //EJERCICIO5
 			for (int i = 0; i < 20; i++) {
 				coleccionable.agregar(new Numero (unicoRandomGlobal.Next(1,99)));
 			}
@@ -115,8 +88,8 @@ namespace Practica1
 			}
 			Console.WriteLine("Se ha llenado la coleccion. ");
 		}
-		
-		public static void imprimir(Coleccionable coleccionable) {
+
+		public static void imprimirNumeros(Coleccionable coleccionable) {
 			if ((coleccionable.GetType()).Equals(new Pila().GetType())) { //comparo si es pila
 				Console.WriteLine("Valores de la Pila: ");
 				for (int i = 0; i < coleccionable.cuantos(); i++) {

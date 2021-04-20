@@ -16,12 +16,12 @@ namespace Practica1
 
 		public int getLegajo {
 			get { return legajo;}
-			set { value = legajo;}
+			set { legajo = value;}
 		}
 
 		public double getPromedio {
 			get { return promedio;}
-			set { value = promedio;}
+			set { promedio = value;}
 		}
 		
 		public Alumno(string n , int d, int l, double p) : base (n,d) {
@@ -52,6 +52,11 @@ namespace Practica1
 				mayor = true;
 			}
 			return mayor;
-		}		
+		}
+		
+		public override string ToString() {
+			return string.Format("[ToString>> Legajo N{0} - Alumnx = {1}	DNI {2} (Promedio = {3}]", legajo, getNombre, getDni, promedio);
+		}
+		
 	}
 }

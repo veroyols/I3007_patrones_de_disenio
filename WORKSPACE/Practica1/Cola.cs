@@ -27,10 +27,17 @@ namespace Practica1
 		public int cuantos() { //cantidad de elementos
 			return elementos.Count;
 		}
-		
-		
-		public Comparable minimo() { //elemento de menor valor de la colección
+
+		public bool Empty () {
+			bool vacia = false;
 			if (cuantos() == 0) {
+				vacia = true;
+			}
+			return vacia;
+		}
+				
+		public Comparable minimo() { //elemento de menor valor de la colección
+			if (Empty()) {
 				return null;
 			}
 			Comparable min = elementos[0];
@@ -43,7 +50,7 @@ namespace Practica1
 		}
 		
 		public Comparable maximo() { //elemento de mayor valor de la colección
-			if (cuantos() == 0) {
+			if (Empty()) { //validacion
 				return null;
 			}
 			Comparable max = elementos[0];
@@ -58,24 +65,18 @@ namespace Practica1
 		public void agregar(Comparable objeto) {
 			elementos.Add(objeto);	
 		}
-		
+
 		public bool contiene(Comparable objeto) { //verdadero si el parámetro pertenece
 			bool cont = false;
-			if ((objeto.GetType()).Equals(new Numero().GetType())) { //comparo si es numero
-				foreach (object element in elementos) {
-					if ((((Numero)element).getValor) == (((Numero)objeto).getValor)) 
-						cont = true;
+			foreach (Comparable element in elementos) {
+				if (element.sosIgual(objeto))
+					cont = true;
 				}
 			return cont; 
-			}
-			if ((objeto.GetType()).Equals(new Persona().GetType())) { 
-				foreach (object element in elementos) {
-					if ((((Persona)element).getDni) == (((Persona)objeto).getDni)) 
-						cont = true;
-				}
-			return cont; 
-			}
-			return false;
-		}	
+		}
+
+		public override string ToString() {
+			return string.Format("Cola");
+		}		
 	}
 }

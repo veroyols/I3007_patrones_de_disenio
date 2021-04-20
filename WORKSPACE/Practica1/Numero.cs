@@ -51,13 +51,9 @@ namespace Practica1
 			}
 			return mayor;
 		}
-		
+
 		public static void informar (Coleccionable coleccionable) { //EJERCICIO6
-			Console.WriteLine("----------INFORME----------");
-			Console.WriteLine("La coleccion posee {0} elementos.",coleccionable.cuantos());
-			Console.WriteLine("Valor minimo >> " + ((Numero)coleccionable.minimo()).getValor);
-			Console.WriteLine("Valor maximo >> " + ((Numero)coleccionable.maximo()).getValor);
-			Console.Write("Ingrese numero para verificar si esta en la coleccion>> ");
+			Console.Write("Ingrese Numero para verificar si esta en la coleccion>> ");
 			int a = int.Parse(Console.ReadLine());
 			Comparable comparable = new Numero (a);
 			if (coleccionable.contiene(comparable)) {
@@ -69,6 +65,8 @@ namespace Practica1
 			Console.WriteLine("--------FIN-INFORME--------\n");	
 		}
 		
-		
+		public override string ToString() {
+			return string.Format("[ToString >> Numero Valor = {0}]", valor);
+		}	
 	}
 }

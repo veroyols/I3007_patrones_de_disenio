@@ -60,13 +60,9 @@ namespace Practica1
 			}
 			return mayor;
 		}
-
+		
 		public static void informar (Coleccionable coleccionable) { //EJERCICIO13
-			Console.WriteLine("----------INFORME----------");
-			Console.WriteLine("La coleccion posee {0} elementos.",coleccionable.cuantos());
-			Console.WriteLine("Valor minimo >> " + ((Persona)coleccionable.minimo()).dni);
-			Console.WriteLine("Valor maximo >> " + ((Persona)coleccionable.maximo()).dni);
-			Console.Write("Ingrese numero para verificar si esta en la coleccion>> ");
+			Console.Write("Ingrese DNI para verificar si esta en la coleccion>> ");
 			int a = int.Parse(Console.ReadLine());
 			Comparable comparable = new Persona (a);
 			if (coleccionable.contiene(comparable)) {
@@ -77,6 +73,12 @@ namespace Practica1
 			Console.WriteLine("El elemento leído NO está en la colección");
 			Console.WriteLine("--------FIN-INFORME--------\n");	
 		}
+		
+		public override string ToString()
+		{
+			return string.Format("[ToString >> Persona Nombre = {0}	DNI = {1}]", nombre, dni);
+		}
+
 
 	}
 }

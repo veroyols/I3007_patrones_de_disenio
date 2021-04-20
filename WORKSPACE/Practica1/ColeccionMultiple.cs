@@ -56,7 +56,7 @@ namespace Practica1
 			return cola.maximo();
 		}
 		
-		public void agregar(Comparable objeto) {
+		public void agregar(Comparable objeto) { //no hace nada
 			return;
 		}
 		
@@ -67,5 +67,10 @@ namespace Practica1
 			}
 			return cont;
 		}
+		
+		public override string ToString() {
+			return string.Format("Coleccion Multiple");
+		}
+		
 	}
 }
