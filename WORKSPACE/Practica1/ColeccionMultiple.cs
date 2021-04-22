@@ -68,6 +68,8 @@ namespace Practica1
 			return cont;
 		}		
 		
+
+		
 		public override string ToString() {
 			return string.Format("Coleccion Multiple");
 		}

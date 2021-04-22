@@ -10,10 +10,14 @@ using System;
 
 namespace Practica1
 {
+													/*Ejercicio 1
+																Implemente cuatro estrategias de comparación para la clase Alumno
+																(por nombre, por DNI, por promedio y por legajo).*/
 	public class Alumno : Persona { //Ejercicio15
 		private int legajo;
 		private double promedio;
-
+		private estrategiaDeComparacion estrategia = new PorNombre();
+		
 		public int getLegajo {
 			get { return legajo;}
 			set { legajo = value;}

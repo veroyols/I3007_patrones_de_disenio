@@ -61,11 +61,7 @@ namespace Practica1
 			Console.WriteLine("La {0} posee {1} elementos.", coleccionable.ToString(), coleccionable.cuantos());
 			Console.WriteLine("Minimo >> " + (coleccionable.minimo()));
 			Console.WriteLine("Maximo >> " + (coleccionable.maximo()));	
-			
-			if (((coleccionable.minimo()).GetType().Equals((new Persona()).GetType())) || ((coleccionable.minimo()).GetType().Equals((new Alumno()).GetType())))
-				Persona.compararPorConsola(coleccionable); //ok
-			if ((coleccionable.minimo()).GetType().Equals((new Numero()).GetType()))
-				Numero.compararPorConsola(coleccionable); //ok
+			(coleccionable.minimo()).compararPorConsola(coleccionable);
 		}
 		
 		public static void llenarNumeros(Coleccionable<Comparable> coleccionable){ //EJERCICIO5

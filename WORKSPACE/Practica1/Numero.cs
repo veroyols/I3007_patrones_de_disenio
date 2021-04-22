@@ -52,16 +52,15 @@ namespace Practica1
 			return mayor;
 		}
 
-		public static void compararPorConsola (Coleccionable<Comparable> coleccionable) { //EJERCICIO6
-			Console.Write("Ingrese Numero para verificar si esta en la coleccion>> ");
+		public void compararPorConsola (Coleccionable<Comparable> coleccionable) { //EJERCICIO6
+			Console.Write("Ingrese un Valor >> ");
 			int a = int.Parse(Console.ReadLine());
-			Comparable comparable = new Numero (a);
-			if (coleccionable.contiene(comparable)) {
-				Console.WriteLine("El elemento leído está en la colección");
+			if (coleccionable.contiene(new Numero(a) )) {
+				Console.WriteLine("El elemento {0} pertenece a la {1}",a,coleccionable.ToString());
 				Console.WriteLine("--------FIN-INFORME--------\n");
 				return;
 			}
-			Console.WriteLine("El elemento leído NO está en la colección");
+			Console.WriteLine("El elemento {0} NO pertenece a la {1}.",a,coleccionable.ToString());
 			Console.WriteLine("--------FIN-INFORME--------\n");	
 		}
 		

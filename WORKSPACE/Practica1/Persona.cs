@@ -61,16 +61,15 @@ namespace Practica1
 			return mayor;
 		}
 		
-		public static void compararPorConsola (Coleccionable<Comparable> coleccionable) { //EJERCICIO13
-			Console.Write("Ingrese DNI para verificar si esta en la coleccion>> ");
-			int dni = int.Parse(Console.ReadLine());
-			Comparable comparable = new Persona (dni);
-			if (coleccionable.contiene(comparable)) {
-				Console.WriteLine("El DNI está en la colección");
+		public void compararPorConsola (Coleccionable<Comparable> coleccionable) { //EJERCICIO13
+			Console.Write("Ingrese DNI >> ");
+			int a = int.Parse(Console.ReadLine());
+			if (coleccionable.contiene(new Persona(a))) {
+				Console.WriteLine("El DNI N{0} pertenece a la {1}",a,coleccionable.ToString());
 				Console.WriteLine("--------FIN-INFORME--------\n");
 				return;
 			}
-			Console.WriteLine("El elemento leído NO está en la colección");
+			Console.WriteLine("El DNI N{0} NO pertenece a la {1}",a,coleccionable.ToString());
 			Console.WriteLine("--------FIN-INFORME--------\n");	
 		}
 		

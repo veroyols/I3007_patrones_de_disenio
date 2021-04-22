@@ -50,6 +50,7 @@
     <Compile Include="ColeccionMultiple.cs" />
     <Compile Include="Comparable.cs" />
     <Compile Include="Coleccionable.cs" />
+    <Compile Include="estrategiaDeComparacion.cs" />
     <Compile Include="Numero.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Pila.cs" />

@@ -18,5 +18,6 @@ namespace Practica1 {
 		bool sosIgual(Comparable objeto);
 		bool sosMenor(Comparable objeto);
 		bool sosMayor(Comparable objeto);
-	}	
+		void compararPorConsola (Coleccionable<Comparable> coleccionable);
+	}
 }
