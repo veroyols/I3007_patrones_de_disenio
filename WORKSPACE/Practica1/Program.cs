@@ -62,6 +62,7 @@ namespace Practica1
 			Console.WriteLine("Minimo >> " + (coleccionable.minimo()));
 			Console.WriteLine("Maximo >> " + (coleccionable.maximo()));	
 			(coleccionable.minimo()).compararPorConsola(coleccionable);
+			
 		}
 		
 		public static void llenarNumeros(Coleccionable<Comparable> coleccionable){ //EJERCICIO5

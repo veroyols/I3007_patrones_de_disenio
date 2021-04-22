@@ -10,13 +10,10 @@ using System;
 
 namespace Practica1
 {
-													/*Ejercicio 1
-																Implemente cuatro estrategias de comparación para la clase Alumno
-																(por nombre, por DNI, por promedio y por legajo).*/
 	public class Alumno : Persona { //Ejercicio15
 		private int legajo;
 		private double promedio;
-		private estrategiaDeComparacion estrategia = new PorNombre();
+		private estrategiaDeComparacion estrategia;
 		
 		public int getLegajo {
 			get { return legajo;}
@@ -28,15 +25,23 @@ namespace Practica1
 			set { promedio = value;}
 		}
 		
-		public Alumno(string n , int d, int l, double p) : base (n,d) {
-			this.legajo = l;
-			this.promedio = p;
+		public estrategiaDeComparacion getEstrategia {
+			get { return estrategia; }
 		}
 
 		public Alumno() {}
 		
-		public Alumno (int dni) : base (dni) {
-		}		
+		public Alumno (int dni) : base (dni) {}		
+
+		public Alumno(string n , int d, int l, double p) : base (n,d) {
+			this.legajo = l;
+			this.promedio = p;
+			estrategia = new PorNombre();
+		}
+
+		public bool comparar (Comparable comparable) {
+			return estrategia.comparar(comparable);
+		}
 		
 		public override string ToString() {
 			return string.Format(">> Legajo N{0} - Alumnx = {1}	DNI {2} (Promedio = {3})", legajo, getNombre, getDni, promedio);

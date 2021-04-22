@@ -63,7 +63,7 @@ namespace Practica1
 		
 		public void compararPorConsola (Coleccionable<Comparable> coleccionable) { //EJERCICIO13
 			Console.Write("Ingrese DNI >> ");
-			int a = int.Parse(Console.ReadLine());
+			int a = int.Parse(Console.ReadLine());			
 			if (coleccionable.contiene(new Persona(a))) {
 				Console.WriteLine("El DNI N{0} pertenece a la {1}",a,coleccionable.ToString());
 				Console.WriteLine("--------FIN-INFORME--------\n");
@@ -76,7 +76,5 @@ namespace Practica1
 		public override string ToString() {
 			return string.Format(">> Persona Nombre = {0}	DNI = {1}", nombre, dni);
 		}
-
-
 	}
 }
