@@ -9,7 +9,7 @@ using System;
 
 namespace Practica1
 {
-	public class ColeccionMultiple : Coleccionable { //EJERCICIO 8
+	public class ColeccionMultiple : Coleccionable<Comparable> { //EJERCICIO 8
 		public Pila pila = new Pila();
 		public Cola cola = new Cola();
 		
@@ -66,7 +66,7 @@ namespace Practica1
 				cont = true;
 			}
 			return cont;
-		}
+		}		
 		
 		public override string ToString() {
 			return string.Format("Coleccion Multiple");

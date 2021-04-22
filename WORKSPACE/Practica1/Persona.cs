@@ -38,14 +38,14 @@ namespace Practica1
 		}
 		
 		//metodos de interfaz comparable
-		public virtual bool sosIgual(Comparable objeto) { //para override en Alumnos
+		public bool sosIgual(Comparable objeto) { //para override en Alumnos
 			bool igual = false;
 			if (dni == ((Persona)objeto).getDni) {
 				igual = true;
 			}
 			return igual;
 		}		
-		public virtual bool sosMenor(Comparable objeto) {
+		public bool sosMenor(Comparable objeto) {
 			bool menor = false;
 			if (dni < ((Persona)objeto).getDni) {
 				menor = true;
@@ -53,7 +53,7 @@ namespace Practica1
 			return menor;
 		}
 
-		public virtual bool sosMayor(Comparable objeto) {
+		public bool sosMayor(Comparable objeto) {
 			bool mayor = false;
 			if (dni > ((Persona)objeto).getDni) {
 				mayor = true;
@@ -61,12 +61,12 @@ namespace Practica1
 			return mayor;
 		}
 		
-		public static void informar (Coleccionable coleccionable) { //EJERCICIO13
+		public static void compararPorConsola (Coleccionable<Comparable> coleccionable) { //EJERCICIO13
 			Console.Write("Ingrese DNI para verificar si esta en la coleccion>> ");
-			int a = int.Parse(Console.ReadLine());
-			Comparable comparable = new Persona (a);
+			int dni = int.Parse(Console.ReadLine());
+			Comparable comparable = new Persona (dni);
 			if (coleccionable.contiene(comparable)) {
-				Console.WriteLine("El elemento leído está en la colección");
+				Console.WriteLine("El DNI está en la colección");
 				Console.WriteLine("--------FIN-INFORME--------\n");
 				return;
 			}
@@ -74,9 +74,8 @@ namespace Practica1
 			Console.WriteLine("--------FIN-INFORME--------\n");	
 		}
 		
-		public override string ToString()
-		{
-			return string.Format("[ToString >> Persona Nombre = {0}	DNI = {1}]", nombre, dni);
+		public override string ToString() {
+			return string.Format(">> Persona Nombre = {0}	DNI = {1}", nombre, dni);
 		}
 
 

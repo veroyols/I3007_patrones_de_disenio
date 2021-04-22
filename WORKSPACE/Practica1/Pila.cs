@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Practica1
 {
-	public class Pila : Coleccionable { //LIFO
+	public class Pila : Coleccionable<Comparable> { //LIFO
 		
 		private List<Comparable> elementos;
 	

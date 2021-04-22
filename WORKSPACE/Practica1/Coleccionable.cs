@@ -10,7 +10,7 @@ using System;
 
 namespace Practica1
 {
-	public interface Coleccionable { //objetos que almacenan comparables
+	public interface Coleccionable<Comparable> { //objetos que almacenan comparables
 		int cuantos(); 
 		Comparable minimo(); 
 		Comparable maximo(); 

@@ -52,7 +52,7 @@ namespace Practica1
 			return mayor;
 		}
 
-		public static void informar (Coleccionable coleccionable) { //EJERCICIO6
+		public static void compararPorConsola (Coleccionable<Comparable> coleccionable) { //EJERCICIO6
 			Console.Write("Ingrese Numero para verificar si esta en la coleccion>> ");
 			int a = int.Parse(Console.ReadLine());
 			Comparable comparable = new Numero (a);
@@ -66,7 +66,7 @@ namespace Practica1
 		}
 		
 		public override string ToString() {
-			return string.Format("[ToString >> Numero Valor = {0}]", valor);
+			return string.Format(">> Numero Valor = {0}", valor);
 		}	
 	}
 }

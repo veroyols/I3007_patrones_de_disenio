@@ -31,31 +31,11 @@ namespace Practica1
 
 		public Alumno() {}
 		
-		public override bool sosIgual (Comparable objeto) {
-			bool igual = false;
-			if (getDni == ((Alumno)objeto).getDni) {
-				igual = true;
-			}
-			return igual;
-		}
-		public override bool sosMenor(Comparable objeto) {
-			bool menor = false;
-			if (getDni < ((Alumno)objeto).getDni) {
-				menor = true;
-			}
-			return menor;
-		}
-
-		public override bool sosMayor(Comparable objeto) {
-			bool mayor = false;
-			if (getDni > ((Alumno)objeto).getDni) {
-				mayor = true;
-			}
-			return mayor;
-		}
+		public Alumno (int dni) : base (dni) {
+		}		
 		
 		public override string ToString() {
-			return string.Format("[ToString>> Legajo N{0} - Alumnx = {1}	DNI {2} (Promedio = {3}]", legajo, getNombre, getDni, promedio);
+			return string.Format(">> Legajo N{0} - Alumnx = {1}	DNI {2} (Promedio = {3})", legajo, getNombre, getDni, promedio);
 		}
 		
 	}

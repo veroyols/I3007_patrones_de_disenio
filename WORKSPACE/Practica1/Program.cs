@@ -24,10 +24,11 @@ namespace Practica1
 			ColeccionMultiple multipleNum = new ColeccionMultiple (pilaNum, colaNum);
 			llenarNumeros (pilaNum);
 			llenarNumeros (colaNum);			
-			informar(pilaNum);
-			informar(colaNum); 
-			informar(multipleNum);
+			informarGeneral(pilaNum);
+			informarGeneral(colaNum); 
+			informarGeneral(multipleNum);
 			Console.ReadKey(true);
+			Console.Clear();
 			
 			/*Ejercicio 13*/			
 			Pila pilaPer = new Pila ();
@@ -35,10 +36,11 @@ namespace Practica1
 			ColeccionMultiple multiplePer = new ColeccionMultiple (pilaPer, colaPer);
 			llenarPersonas (pilaPer);
 			llenarPersonas (colaPer);			
-			informar(pilaPer);
-			informar(colaPer); 
-			informar(multiplePer);
+			informarGeneral(pilaPer);
+			informarGeneral(colaPer); 
+			informarGeneral(multiplePer);
 			Console.ReadKey(true);
+			Console.Clear();
 			
 			/*Ejercicio 17*/
 			Pila pilaAl= new Pila ();
@@ -46,96 +48,48 @@ namespace Practica1
 			ColeccionMultiple multipleAl = new ColeccionMultiple (pilaAl, colaAl);
 			llenarAlumnos (pilaAl);
 			llenarAlumnos (colaAl);			
-			informar(pilaAl);
-			informar(colaAl); 
-			informar(multipleAl);
-
+			informarGeneral(pilaAl);
+			informarGeneral(colaAl); 
+			informarGeneral(multipleAl);
+			
 			Console.Write("\n Press any key to continue . . . ");
 			Console.ReadKey(true);
 		}
 		
-		public static void informar (Coleccionable coleccionable) { //EJERCICIO6 / EJERCICIO13 informar coleccion de personas/numeros/alumnos
+		public static void informarGeneral (Coleccionable<Comparable> coleccionable) { //EJERCICIO6 / EJERCICIO13 informar coleccion de personas/numeros/alumnos
 			Console.WriteLine("----------INFORME----------");
 			Console.WriteLine("La {0} posee {1} elementos.", coleccionable.ToString(), coleccionable.cuantos());
 			Console.WriteLine("Minimo >> " + (coleccionable.minimo()));
-			Console.WriteLine("Maximo >> " + (coleccionable.maximo()));
+			Console.WriteLine("Maximo >> " + (coleccionable.maximo()));	
+			
+			if (((coleccionable.minimo()).GetType().Equals((new Persona()).GetType())) || ((coleccionable.minimo()).GetType().Equals((new Alumno()).GetType())))
+				Persona.compararPorConsola(coleccionable); //ok
+			if ((coleccionable.minimo()).GetType().Equals((new Numero()).GetType()))
+				Numero.compararPorConsola(coleccionable); //ok
 		}
 		
-		public static void llenarNumeros(Coleccionable coleccionable){ //EJERCICIO5
+		public static void llenarNumeros(Coleccionable<Comparable> coleccionable){ //EJERCICIO5
 			for (int i = 0; i < 20; i++) {
 				coleccionable.agregar(new Numero (unicoRandomGlobal.Next(1,99)));
 			}
-			Console.WriteLine("Se ha llenado la coleccion. ");
 		}	
 				
-		public static void llenarPersonas(Coleccionable coleccionable){ //EJERCICIO12
+		public static void llenarPersonas(Coleccionable<Comparable> coleccionable){ //EJERCICIO12
 			List<string> lista = new List<string> (20) {"Luz","Mar","Bea","Ana","Ema","Jua","Ale","Joa","Roy","Noe",
 														"Ian","Paz","Sol","Luca","Car","Dem","Enzo","Ve","Gra","Deb",};
 			for (int i = 0; i < 20; i++) { //nombre, dni
 				coleccionable.agregar(new Persona (lista[(unicoRandomGlobal.Next(1,99))%20], (unicoRandomGlobal.Next(12000000,50000000))));
 			}
-			Console.WriteLine("Se ha llenado la coleccion. ");
 		}		
 
-		public static void llenarAlumnos(Coleccionable coleccionable){ //EJERCICIO12
+		public static void llenarAlumnos(Coleccionable<Comparable> coleccionable){ //EJERCICIO12
 			List<string> lista = new List<string> (20) {"Luz","Mar","Bea","Ana","Ema","Jua","Ale","Joa","Roy","Noe",
 														"Ian","Paz","Sol","Luca","Car","Dem","Enzo","Ve","Gra","Deb",};
 			for (int i = 0; i < 20; i++) { //nombre, dni
 				coleccionable.agregar(new Alumno (lista[(unicoRandomGlobal.Next(1,99))%20],
 				                                  (unicoRandomGlobal.Next(12000000,50000000)) ,
 				                                  i+1,
-				                                  (unicoRandomGlobal.Next(0,10))));
-			}
-			Console.WriteLine("Se ha llenado la coleccion. ");
-		}
-
-		public static void imprimirNumeros(Coleccionable coleccionable) {
-			if ((coleccionable.GetType()).Equals(new Pila().GetType())) { //comparo si es pila
-				Console.WriteLine("Valores de la Pila: ");
-				for (int i = 0; i < coleccionable.cuantos(); i++) {
-					int a = ((Numero)((Pila)coleccionable).Elementos[i]).getValor; //para pila
-					Console.Write(a + " - ");
-				}			
-			}
-			else {
-				Console.WriteLine("Valores de la Cola: ");
-				for (int i = 0; i < coleccionable.cuantos(); i++) {
-					int a = ((Numero)((Cola)coleccionable).Elementos[i]).getValor; 
-					Console.Write(a + " - ");
-				}	
-			}
-		}
-		public static void imprimirPersonas(Coleccionable coleccionable) {
-			if ((coleccionable.GetType()).Equals(new Pila().GetType())) { //comparo si es pila
-				Console.WriteLine("Personas en la Pila: ");
-				for (int i = 0; i < coleccionable.cuantos(); i++) 
-					Console.WriteLine(((Persona)((Pila)coleccionable).Elementos[i]).getNombre + ">> " + ((Persona)((Pila)coleccionable).Elementos[i]).getDni);			
-			}
-			else {
-				Console.WriteLine("Personas en la Cola: ");
-				for (int i = 0; i < coleccionable.cuantos(); i++) 
-					Console.WriteLine(((Persona)((Cola)coleccionable).Elementos[i]).getNombre + ">> " + ((Persona)((Cola)coleccionable).Elementos[i]).getDni);			
-			}
-		}
-		public static void imprimirAlumnos(Coleccionable coleccionable) {
-			if ((coleccionable.GetType()).Equals(new Pila().GetType())) { //comparo si es pila
-				Console.WriteLine("Alumnos en la Pila: ");
-				for (int i = 0; i < coleccionable.cuantos(); i++) {
-					Console.WriteLine(((Alumno)((Pila)coleccionable).Elementos[i]).getNombre + 
-					                  " 	DNI N: " + ((Alumno)((Pila)coleccionable).Elementos[i]).getDni + 
-					                  "		Legajo: " + ((Alumno)((Pila)coleccionable).Elementos[i]).getLegajo + 
-					                 "		Promedio: " + ((Alumno)((Pila)coleccionable).Elementos[i]).getPromedio) ;
-				}
-			}
-			
-			else {
-				Console.WriteLine("Alumnos en la Cola: ");
-				for (int i = 0; i < coleccionable.cuantos(); i++) {
-					Console.WriteLine(((Alumno)((Cola)coleccionable).Elementos[i]).getNombre + 
-					                  "	DNI N: " + ((Alumno)((Cola)coleccionable).Elementos[i]).getDni +
-										"		Legajo: " + ((Alumno)((Cola)coleccionable).Elementos[i]).getLegajo +
-										"		Promedio: " + ((Alumno)((Cola)coleccionable).Elementos[i]).getPromedio) ;
-				}
+				                                  (unicoRandomGlobal.Next(1,10))));
 			}
 		}
 	}

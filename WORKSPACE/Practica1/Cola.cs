@@ -11,7 +11,7 @@ using System.Collections.Generic;
 
 namespace Practica1
 {
-	public class Cola : Coleccionable { //FIFO
+	public class Cola : Coleccionable<Comparable> { //FIFO
 		
 		private List<Comparable> elementos;
 	
