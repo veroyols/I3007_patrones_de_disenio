@@ -11,11 +11,11 @@ namespace Practica1 {									/*Ejercicio1
 																	Implemente cuatro estrategias de comparación para la clase Alumno
 																	(por nombre, por DNI, por promedio y por legajo).*/
 	public interface estrategiaDeComparacion{
-		bool comparar(Comparable comparable);
+		bool comparar(Comparable comparable, Coleccionable<Comparable> coleccionable);
 	}
 	
 	public class PorNombre : estrategiaDeComparacion {
-		public bool comparar(Comparable comparable) {
+		public bool comparar(Comparable comparable, Coleccionable<Comparable> coleccionable) {
 //			bool x = false;
 //			(((Alumno)comparable).getNombre)
 			return true;
@@ -23,19 +23,19 @@ namespace Practica1 {									/*Ejercicio1
 	}
 
 	public class PorDni : estrategiaDeComparacion {
-		public bool comparar(Comparable comparable) {
+		public bool comparar(Comparable comparable, Coleccionable<Comparable> coleccionable) {
 			return true;
 		}
 	}
 
 	public class PorLegajo : estrategiaDeComparacion {
-		public bool comparar(Comparable comparable) {
+		public bool comparar(Comparable comparable, Coleccionable<Comparable> coleccionable) {
 			return true;
 		}
 	}
 
 	public class PorPromedio : estrategiaDeComparacion {
-		public bool comparar(Comparable comparable) {
+		public bool comparar(Comparable comparable, Coleccionable<Comparable> coleccionable) {
 			return true;
 		}
 	}	

@@ -13,6 +13,7 @@ namespace Practica1
 	public class Alumno : Persona { //Ejercicio15
 		private int legajo;
 		private double promedio;
+		private estrategiaDeComparacion estrategia;
 		
 		public int getLegajo {
 			get { return legajo;}
@@ -24,6 +25,10 @@ namespace Practica1
 			set { promedio = value;}
 		}
 		
+		public estrategiaDeComparacion getEstrategia {
+			get { return estrategia; }
+		}
+
 		public Alumno() {}
 		
 		public Alumno (int dni) : base (dni) {}		
@@ -31,6 +36,11 @@ namespace Practica1
 		public Alumno(string n , int d, int l, double p) : base (n,d) {
 			this.legajo = l;
 			this.promedio = p;
+			estrategia = new PorNombre();
+		}
+
+		public bool comparar (Comparable comparable, Coleccionable<Comparable> coleccionable) {
+			return estrategia.comparar(comparable, coleccionable);
 		}
 		
 		public override string ToString() {

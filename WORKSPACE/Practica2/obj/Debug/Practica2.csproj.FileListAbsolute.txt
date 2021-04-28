@@ -1,0 +1,5 @@
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica2\bin\Debug\Practica2.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica2\bin\Debug\Practica2.pdb
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica2\obj\Debug\Practica2.csprojResolveAssemblyReference.cache
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica2\obj\Debug\Practica2.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica2\obj\Debug\Practica2.pdb

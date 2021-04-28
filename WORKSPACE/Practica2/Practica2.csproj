@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
-    <ProjectGuid>{B570C606-DE96-4754-9FD7-A79FE48AE59D}</ProjectGuid>
+    <ProjectGuid>{F1B833D0-4A5A-4EE4-A329-DC4C82173A6B}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Practica1</RootNamespace>
-    <AssemblyName>Practica1</AssemblyName>
+    <RootNamespace>Practica2</RootNamespace>
+    <AssemblyName>Practica2</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -47,9 +47,10 @@
   <ItemGroup>
     <Compile Include="Alumno.cs" />
     <Compile Include="Cola.cs" />
+    <Compile Include="Coleccionable.cs" />
     <Compile Include="ColeccionMultiple.cs" />
     <Compile Include="Comparable.cs" />
-    <Compile Include="Coleccionable.cs" />
+    <Compile Include="estrategiaDeComparacion.cs" />
     <Compile Include="Numero.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Pila.cs" />
