@@ -8,7 +8,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Practica1
+namespace Practica2
 {
 	public class Pila : Coleccionable<Comparable> { //LIFO
 		
@@ -23,7 +23,7 @@ namespace Practica1
 			elementos = new List<Comparable>();  
 		}
 		
-		public int cuantos() { //cantidad de elementos
+		public int cuantos() { 
 			return elementos.Count;
 		}
 
@@ -35,7 +35,7 @@ namespace Practica1
 			return vacia;
 		}
 				
-		public Comparable minimo() { //elemento de menor valor de la colección
+		public Comparable minimo() { 
 			if (Empty()) {
 				return null;
 			}
@@ -48,7 +48,7 @@ namespace Practica1
 			return min; 
 		}
 		
-		public Comparable maximo() { //elemento de mayor valor de la colección
+		public Comparable maximo() { 
 			if (Empty()) { //validacion
 				return null;
 			}
@@ -77,6 +77,5 @@ namespace Practica1
 		public override string ToString() {
 			return string.Format("Pila");
 		}
-		
 	}
 }

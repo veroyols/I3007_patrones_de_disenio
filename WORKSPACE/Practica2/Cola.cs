@@ -4,12 +4,11 @@
  * Fecha: 15/4/2021
  * Hora: 22:00
  * 
- * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
  */
 using System;
 using System.Collections.Generic;
 
-namespace Practica1
+namespace Practica2
 {
 	public class Cola : Coleccionable<Comparable> { //FIFO
 		

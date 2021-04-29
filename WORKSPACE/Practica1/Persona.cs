@@ -38,7 +38,7 @@ namespace Practica1
 		}
 		
 		//metodos de interfaz comparable
-		public bool sosIgual(Comparable objeto) { //para override en Alumnos
+		public bool sosIgual(Comparable objeto) {
 			bool igual = false;
 			if (dni == ((Persona)objeto).getDni) {
 				igual = true;

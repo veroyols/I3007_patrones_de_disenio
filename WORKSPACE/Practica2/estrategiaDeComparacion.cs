@@ -7,36 +7,101 @@
  */
 using System;
 
-namespace Practica1 {									/*Ejercicio1
-																	Implemente cuatro estrategias de comparación para la clase Alumno
-																	(por nombre, por DNI, por promedio y por legajo).*/
-	public interface estrategiaDeComparacion{
-		bool comparar(Comparable comparable, Coleccionable<Comparable> coleccionable);
+namespace Practica2 { /*Ejercicio1: Implemente cuatro estrategias de comparación para la clase Alumno.*/
+	
+	public interface estrategiaDeComparacion{ //obj,this
+		bool sosIgual(Comparable objeto, Comparable objeto2);
+		bool sosMayor(Comparable objeto, Comparable objeto2);
+		bool sosMenor(Comparable objeto, Comparable objeto2);
 	}
 	
-	public class PorNombre : estrategiaDeComparacion {
-		public bool comparar(Comparable comparable, Coleccionable<Comparable> coleccionable) {
-//			bool x = false;
-//			(((Alumno)comparable).getNombre)
-			return true;
+	public class PorNombre : estrategiaDeComparacion { //Ejercicio1
+		
+		public bool sosIgual(Comparable objeto, Comparable objeto2) { 
+			bool igual = false;
+			if (((Alumno)objeto).getNombre == ((Alumno)objeto2).getNombre)
+				igual = true;
+			return igual;
 		}
-	}
 
+		public bool sosMayor(Comparable objeto, Comparable objeto2) { 
+			return false;
+		} //false
+
+		public bool sosMenor(Comparable objeto, Comparable objeto2) { 
+			return false;
+		} //false
+	}
+		
 	public class PorDni : estrategiaDeComparacion {
-		public bool comparar(Comparable comparable, Coleccionable<Comparable> coleccionable) {
-			return true;
+		
+		public bool sosIgual(Comparable objeto, Comparable objeto2) { 
+			bool igual = false;
+			if (((Alumno)objeto).getDni == ((Alumno)objeto2).getDni)
+				igual = true;
+			return igual;
+		} 
+
+		public bool sosMayor(Comparable objeto, Comparable objeto2) { //obj,this
+			bool mayor = false;
+			if (((Alumno)objeto).getDni < ((Alumno)objeto2).getDni)
+				mayor = true;
+			return mayor;
+		}//O2 es mayor que O1
+
+		public bool sosMenor(Comparable objeto, Comparable objeto2) { //O2 es menor que O1
+			bool menor = false;
+			if (((Alumno)objeto).getDni > ((Alumno)objeto2).getDni)
+				menor = true;
+			return menor;
 		}
 	}
-
+	
 	public class PorLegajo : estrategiaDeComparacion {
-		public bool comparar(Comparable comparable, Coleccionable<Comparable> coleccionable) {
-			return true;
+		
+		public bool sosIgual(Comparable objeto, Comparable objeto2) { 
+			bool igual = false;
+			if (((Alumno)objeto).getLegajo == ((Alumno)objeto2).getLegajo)
+				igual = true;
+			return igual;
+		}
+
+		public bool sosMayor(Comparable objeto, Comparable objeto2) { //O2 es mayor que O1
+			bool mayor = false;
+			if (((Alumno)objeto).getLegajo < ((Alumno)objeto2).getLegajo)
+				mayor = true;
+			return mayor;
+		}
+
+		public bool sosMenor(Comparable objeto, Comparable objeto2) { //O2 es menor que O1
+			bool menor = false;
+			if (((Alumno)objeto).getLegajo > ((Alumno)objeto2).getLegajo)
+				menor = true;
+			return menor;
 		}
 	}
-
+	
 	public class PorPromedio : estrategiaDeComparacion {
-		public bool comparar(Comparable comparable, Coleccionable<Comparable> coleccionable) {
-			return true;
+		
+		public bool sosIgual(Comparable objeto, Comparable objeto2) { 
+			bool igual = false;
+			if (((Alumno)objeto).getPromedio == ((Alumno)objeto2).getPromedio)
+				igual = true;
+			return igual;
 		}
-	}	
+
+		public bool sosMayor(Comparable objeto, Comparable objeto2) { //O2 es mayor que O1
+			bool mayor = false;
+			if (((Alumno)objeto).getPromedio < ((Alumno)objeto2).getPromedio)
+				mayor = true;
+			return mayor;
+		}
+
+		public bool sosMenor(Comparable objeto, Comparable objeto2) { //O2 es menor que O1
+			bool menor = false;
+			if (((Alumno)objeto).getPromedio > ((Alumno)objeto2).getPromedio)
+				menor = true;
+			return menor;
+		}
+	}
 }

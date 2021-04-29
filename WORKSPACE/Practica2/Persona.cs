@@ -9,7 +9,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Practica1
+namespace Practica2
 {
 	public class Persona : Comparable
 	{
@@ -29,7 +29,7 @@ namespace Practica1
 		
 		public string getNombre {
 			get { return nombre;}
-			set { value = nombre;}
+			set { nombre = value;}
 		}
 		
 		public int getDni {
@@ -37,23 +37,21 @@ namespace Practica1
 			set { dni = value;}
 		}
 		
-		//metodos de interfaz comparable
-		public bool sosIgual(Comparable objeto) { //para override en Alumnos
+		public virtual bool sosIgual(Comparable objeto) { //por nombre o dni
 			bool igual = false;
-			if (dni == ((Persona)objeto).getDni) {
+			if ((nombre == ((Persona)objeto).getNombre ) || (dni == ((Persona)objeto).getDni)){
 				igual = true;
 			}
 			return igual;
 		}		
-		public bool sosMenor(Comparable objeto) {
+		public virtual bool sosMenor(Comparable objeto) {
 			bool menor = false;
 			if (dni < ((Persona)objeto).getDni) {
 				menor = true;
 			}
 			return menor;
 		}
-
-		public bool sosMayor(Comparable objeto) {
+		public virtual bool sosMayor(Comparable objeto) {
 			bool mayor = false;
 			if (dni > ((Persona)objeto).getDni) {
 				mayor = true;
@@ -61,7 +59,7 @@ namespace Practica1
 			return mayor;
 		}
 		
-		public void compararPorConsola (Coleccionable<Comparable> coleccionable) { //EJERCICIO13
+		public virtual void compararPorConsola (Coleccionable<Comparable> coleccionable) { 
 			Console.Write("Ingrese DNI >> ");
 			int a = int.Parse(Console.ReadLine());			
 			if (coleccionable.contiene(new Persona(a))) {

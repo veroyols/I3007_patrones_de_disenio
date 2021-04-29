@@ -3,30 +3,25 @@
  * Usuario: veros
  * Fecha: 14/4/2021
  * Hora: 20:39
- * 
-Ejercicio 2
-Nota: Si se implementa en C#, en los tres métodos a implementar, se deberá castear el parámetro recibido a Numero.
  */
 using System;
 
-namespace Practica1
+namespace Practica2
 {
-	public class Numero : Comparable { //Haga que la clase Numero implemente la interface Comparable
+	public class Numero : Comparable { 
 		private int valor;
 		
-		public Numero(int v) { //constructor(v)
+		public Numero(int v) { 
 			this.valor = v;
 		}
 		
-		public Numero() { //constructor()
-		}
+		public Numero() {}
 		
 		public int getValor { //declara la propiedad publica
 			get {return valor; }
 		}
 
-//verdadero si el objeto que recibe el mensaje es el mismo que el “comparable” por parámetro, falso en caso contrario
-		public bool sosIgual(Comparable objeto) {
+		public bool sosIgual(Comparable objeto) { //verdadero si el objeto es el mismo que el parámetro
 			bool igual = false;
 			if (valor == ((Numero)objeto).getValor) {
 				igual = true;
@@ -34,8 +29,7 @@ namespace Practica1
 			return igual;
 		}
 
-//verdadero si el objeto que recibe el mensaje es menor que el “comparable” por parámetro, falso en caso contrario	
-		public bool sosMenor(Comparable objeto) {
+		public bool sosMenor(Comparable objeto) { //verdadero si el objeto es menor que el parámetro
 			bool menor = false;
 			if (valor < ((Numero)objeto).getValor) {
 				menor = true;
@@ -43,8 +37,7 @@ namespace Practica1
 			return menor;
 		}
 
-//verdadero si el objeto que recibe el mensaje es mayor que el “comparable” por parámetro, falso en caso contrario
-		public bool sosMayor(Comparable objeto) {
+		public bool sosMayor(Comparable objeto) { //verdadero si el objeto es mayor que el parámetro
 			bool mayor = false;
 			if (valor > ((Numero)objeto).getValor) {
 				mayor = true;
@@ -52,7 +45,7 @@ namespace Practica1
 			return mayor;
 		}
 
-		public void compararPorConsola (Coleccionable<Comparable> coleccionable) { //EJERCICIO6
+		public void compararPorConsola (Coleccionable<Comparable> coleccionable) {
 			Console.Write("Ingrese un Valor >> ");
 			int a = int.Parse(Console.ReadLine());
 			if (coleccionable.contiene(new Numero(a) )) {

@@ -4,11 +4,10 @@
  * Fecha: 14/4/2021
  * Hora: 21:26
  * 
-Ejercicio 3
  */
 using System;
 
-namespace Practica1
+namespace Practica2
 {
 	public interface Coleccionable<Comparable> { //objetos que almacenan comparables
 		int cuantos(); 

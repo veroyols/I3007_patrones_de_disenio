@@ -6,13 +6,14 @@
  * 
  */
 using System;
+using System.Collections.Generic;
 
-namespace Practica1
+namespace Practica2
 {
-	public class ColeccionMultiple : Coleccionable<Comparable> { //EJERCICIO 8
+	public class ColeccionMultiple : Coleccionable<Comparable> {
 		public Pila pila = new Pila();
 		public Cola cola = new Cola();
-		
+
 		public ColeccionMultiple(Pila p, Cola c) {
 			this.pila = p;
 			this.cola = c;
@@ -67,8 +68,6 @@ namespace Practica1
 			}
 			return cont;
 		}		
-		
-
 		
 		public override string ToString() {
 			return string.Format("Coleccion Multiple");
