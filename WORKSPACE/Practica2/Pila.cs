@@ -8,8 +8,8 @@
 using System;
 using System.Collections.Generic;
 
-namespace Practica2
-{
+namespace Practica2 {
+	
 	public class Pila : Coleccionable<Comparable> { //LIFO
 		
 		private List<Comparable> elementos;
@@ -67,6 +67,7 @@ namespace Practica2
 
 		public bool contiene(Comparable objeto) { //verdadero si el parámetro pertenece
 			bool cont = false;
+			
 			foreach (Comparable element in elementos) {
 				if (element.sosIgual(objeto))
 					cont = true;

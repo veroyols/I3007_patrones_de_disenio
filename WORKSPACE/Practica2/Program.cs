@@ -9,38 +9,33 @@
 using System;
 using System.Collections.Generic;
 
-namespace Practica2
-{
-	class Program
-	{
+namespace Practica2 {
+	
+	class Program {
+		
 		private static Random unicoRandomGlobal = new Random(); 	
 
-		public static void Main(string[] args)
-		{
-			Console.WriteLine("Hello World!");
-			
-			// TODO: Implement Functionality Here
+		public static void Main(string[] args) {
 			
 			Pila pilaAl = new Pila();
-			llenarAlumnos(pilaAl);
 			Cola colaAl = new Cola();
-			llenarAlumnos(colaAl);
 			ColeccionMultiple coleccionAl = new ColeccionMultiple (pilaAl,colaAl);
-			informarGeneral(coleccionAl);
+			EstrategiaDeComparacion estrategia = new PorDni();
+			Alumno alumno = new Alumno ("Maria", 12345678,999,9,estrategia);
+			llenarAlumnos(colaAl, estrategia);
+			llenarAlumnos(pilaAl, estrategia);
+			Console.WriteLine(coleccionAl.cuantos());		
+//			informarGeneral(coleccionAl);
 			
-//			estrategiaDeComparacion e = new PorLegajo();
-//			Alumno al = new Alumno("Vero",30975596,1984,10,e);
-//			Alumno al2 = new Alumno("Juana",50885165,2011,8,e);
-//			al.sosMenor(al2); //obj,this
-//			Console.WriteLine(al.getLegajo+" es menor que "+al2.getLegajo+"? "+al.sosMenor(al2));
-//			Console.WriteLine(al.getLegajo+" es mayor que "+al2.getLegajo+"? "+al.sosMayor(al2));		
+			Conjunto conjunto = new Conjunto ();
+			conjunto.agregar(alumno);
+			conjunto.agregar(alumno);
 			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
 		}
 
-		public static void llenarAlumnos(Coleccionable<Comparable> coleccionable){ //EJERCICIO2
-			estrategiaDeComparacion estrategia = new PorPromedio();
+		public static void llenarAlumnos(Coleccionable<Comparable> coleccionable, EstrategiaDeComparacion estrategia){ //EJERCICIO2
 			List<string> lista = new List<string> (20) {"Luz","Mar","Bea","Ana","Ema","Jua","Ale","Joa","Roy","Noe",
 														"Ian","Paz","Sol","Luca","Car","Dem","Enzo","Ve","Gra","Deb",};
 			for (int i = 0; i < 20; i++) { //nombre, dni
@@ -57,7 +52,6 @@ namespace Practica2
 			Console.WriteLine("La {0} posee {1} elementos.", coleccionable.ToString(), coleccionable.cuantos());
 			Console.WriteLine("Minimo >> " + (coleccionable.minimo()));
 			Console.WriteLine("Maximo >> " + (coleccionable.maximo()));	
-			Alumno alumno = new Alumno();
 			(coleccionable.minimo()).compararPorConsola(coleccionable);
 		}
 	}

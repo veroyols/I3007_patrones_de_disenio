@@ -8,22 +8,22 @@
 using System;
 using System.Collections.Generic;
 
-namespace Practica2
-{
+namespace Practica2 {
+
 	public class Cola : Coleccionable<Comparable> { //FIFO
 		
 		private List<Comparable> elementos;
 	
-		public List<Comparable> Elementos { //declara propiedad pública
-			set { elementos = value; } //se ejecuta al escribir
-			get { return elementos; } //se ejecuta al leer 
+		public List<Comparable> Elementos {
+			set { elementos = value; }
+			get { return elementos; }  
 		}
 	
 		public Cola () {
 			elementos = new List<Comparable>();  
 		}
 		
-		public int cuantos() { //cantidad de elementos
+		public int cuantos() { 
 			return elementos.Count;
 		}
 
@@ -35,7 +35,7 @@ namespace Practica2
 			return vacia;
 		}
 				
-		public Comparable minimo() { //elemento de menor valor de la colección
+		public Comparable minimo() {
 			if (Empty()) {
 				return null;
 			}
@@ -48,7 +48,7 @@ namespace Practica2
 			return min; 
 		}
 		
-		public Comparable maximo() { //elemento de mayor valor de la colección
+		public Comparable maximo() { 
 			if (Empty()) { //validacion
 				return null;
 			}
@@ -67,6 +67,7 @@ namespace Practica2
 
 		public bool contiene(Comparable objeto) { //verdadero si el parámetro pertenece
 			bool cont = false;
+			
 			foreach (Comparable element in elementos) {
 				if (element.sosIgual(objeto))
 					cont = true;

@@ -8,9 +8,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace Practica2
-{
+namespace Practica2 {
+	
 	public class ColeccionMultiple : Coleccionable<Comparable> {
+	
 		public Pila pila = new Pila();
 		public Cola cola = new Cola();
 

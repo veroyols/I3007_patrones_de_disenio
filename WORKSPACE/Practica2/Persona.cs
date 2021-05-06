@@ -9,10 +9,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace Practica2
-{
-	public class Persona : Comparable
-	{
+namespace Practica2 {
+	
+	public class Persona : Comparable {
+		
 		private string nombre;
 		private int dni;
 		

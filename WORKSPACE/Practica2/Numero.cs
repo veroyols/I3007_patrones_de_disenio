@@ -3,25 +3,28 @@
  * Usuario: veros
  * Fecha: 14/4/2021
  * Hora: 20:39
+ * 
  */
 using System;
 
-namespace Practica2
-{
-	public class Numero : Comparable { 
+namespace Practica2 {
+	
+	public class Numero : Comparable { //Haga que la clase Numero implemente la interface Comparable
+		
 		private int valor;
 		
-		public Numero(int v) { 
+		public Numero(int v) {
 			this.valor = v;
 		}
 		
 		public Numero() {}
 		
-		public int getValor { //declara la propiedad publica
+		public int getValor { 
 			get {return valor; }
+			set {valor = value; }
 		}
 
-		public bool sosIgual(Comparable objeto) { //verdadero si el objeto es el mismo que el parámetro
+		public bool sosIgual(Comparable objeto) {
 			bool igual = false;
 			if (valor == ((Numero)objeto).getValor) {
 				igual = true;
@@ -29,7 +32,7 @@ namespace Practica2
 			return igual;
 		}
 
-		public bool sosMenor(Comparable objeto) { //verdadero si el objeto es menor que el parámetro
+		public bool sosMenor(Comparable objeto) {
 			bool menor = false;
 			if (valor < ((Numero)objeto).getValor) {
 				menor = true;
@@ -37,7 +40,7 @@ namespace Practica2
 			return menor;
 		}
 
-		public bool sosMayor(Comparable objeto) { //verdadero si el objeto es mayor que el parámetro
+		public bool sosMayor(Comparable objeto) {
 			bool mayor = false;
 			if (valor > ((Numero)objeto).getValor) {
 				mayor = true;
@@ -45,7 +48,7 @@ namespace Practica2
 			return mayor;
 		}
 
-		public void compararPorConsola (Coleccionable<Comparable> coleccionable) {
+		public void compararPorConsola (Coleccionable<Comparable> coleccionable) { //EJERCICIO6
 			Console.Write("Ingrese un Valor >> ");
 			int a = int.Parse(Console.ReadLine());
 			if (coleccionable.contiene(new Numero(a) )) {

@@ -7,8 +7,8 @@
  */
 using System;
 
-namespace Practica2
-{
+namespace Practica2 {
+	
 	public interface Coleccionable<Comparable> { //objetos que almacenan comparables
 		int cuantos(); 
 		Comparable minimo(); 

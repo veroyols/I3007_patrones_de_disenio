@@ -9,13 +9,13 @@ using System;
 
 namespace Practica2 { /*Ejercicio1: Implemente cuatro estrategias de comparación para la clase Alumno.*/
 	
-	public interface estrategiaDeComparacion{ //obj,this
+	public interface EstrategiaDeComparacion{ //obj,this
 		bool sosIgual(Comparable objeto, Comparable objeto2);
 		bool sosMayor(Comparable objeto, Comparable objeto2);
 		bool sosMenor(Comparable objeto, Comparable objeto2);
 	}
 	
-	public class PorNombre : estrategiaDeComparacion { //Ejercicio1
+	public class PorNombre : EstrategiaDeComparacion { //Ejercicio1
 		
 		public bool sosIgual(Comparable objeto, Comparable objeto2) { 
 			bool igual = false;
@@ -33,7 +33,7 @@ namespace Practica2 { /*Ejercicio1: Implemente cuatro estrategias de comparació
 		} //false
 	}
 		
-	public class PorDni : estrategiaDeComparacion {
+	public class PorDni : EstrategiaDeComparacion {
 		
 		public bool sosIgual(Comparable objeto, Comparable objeto2) { 
 			bool igual = false;
@@ -57,7 +57,7 @@ namespace Practica2 { /*Ejercicio1: Implemente cuatro estrategias de comparació
 		}
 	}
 	
-	public class PorLegajo : estrategiaDeComparacion {
+	public class PorLegajo : EstrategiaDeComparacion {
 		
 		public bool sosIgual(Comparable objeto, Comparable objeto2) { 
 			bool igual = false;
@@ -81,7 +81,7 @@ namespace Practica2 { /*Ejercicio1: Implemente cuatro estrategias de comparació
 		}
 	}
 	
-	public class PorPromedio : estrategiaDeComparacion {
+	public class PorPromedio : EstrategiaDeComparacion {
 		
 		public bool sosIgual(Comparable objeto, Comparable objeto2) { 
 			bool igual = false;
