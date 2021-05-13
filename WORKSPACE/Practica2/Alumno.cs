@@ -30,6 +30,10 @@ namespace Practica2 {
 		}
 
 		public Alumno() {}
+
+		public Alumno(string nombre) {
+			this.getNombre = nombre;
+		}
 		
 		public Alumno(string n , int d, int l, double p) : base (n,d) {
 			this.legajo = l;

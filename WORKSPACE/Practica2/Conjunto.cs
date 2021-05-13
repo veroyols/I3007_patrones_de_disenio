@@ -10,7 +10,7 @@ using System.Collections.Generic;
 	
 namespace Practica2 {
 	
-	public class Conjunto { //sin repeticion
+	public class Conjunto :  Coleccionable<Comparable> { //lista de elementos sin repeticion
 		
 		private List<Comparable> elementos;
 	
@@ -23,7 +23,7 @@ namespace Practica2 {
 			elementos = new List<Comparable>();
 			}
 	
-		public bool pertenece (Comparable comparable) {
+		public bool pertenece (Comparable comparable) { //E3
 			if (elementos == null ) {
 				return false;
 			}
@@ -31,8 +31,8 @@ namespace Practica2 {
 					return true; 
 			return false;
 		}
-
-		public void agregar (Comparable comparable) {
+		//IColeccionable
+		public void agregar (Comparable comparable) { //E3 (obj)
 			if (pertenece(comparable)) {
 				Console.WriteLine("El elemento ya pertenece a la coleccion.");
 				return;
@@ -41,5 +41,23 @@ namespace Practica2 {
 			Console.WriteLine("El elemento ha sido agregado a la coleccion. ");
 			return;
 		}
+		
+		public int cuantos() {
+			return 1;
+		}
+		
+		public Comparable minimo() {
+			Comparable num = new Numero();
+			return num;
+		}
+		
+		public Comparable maximo() {
+			Comparable num = new Numero();
+			return num;
+		}
+			
+		public bool contiene(Comparable objeto) {
+			return false;
+		}		
 	}
 }

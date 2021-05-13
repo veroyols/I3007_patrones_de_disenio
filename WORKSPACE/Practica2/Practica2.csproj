@@ -52,6 +52,7 @@
     <Compile Include="ColeccionMultiple.cs" />
     <Compile Include="Comparable.cs" />
     <Compile Include="Conjunto.cs" />
+    <Compile Include="Diccionario.cs" />
     <Compile Include="estrategiaDeComparacion.cs" />
     <Compile Include="Numero.cs" />
     <Compile Include="Persona.cs" />

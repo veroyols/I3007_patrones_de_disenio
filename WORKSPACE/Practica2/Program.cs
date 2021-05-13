@@ -18,19 +18,19 @@ namespace Practica2 {
 		public static void Main(string[] args) {
 			
 			Pila pilaAl = new Pila();
+			EstrategiaDeComparacion estrategia = new PorDni();
 			Cola colaAl = new Cola();
 			ColeccionMultiple coleccionAl = new ColeccionMultiple (pilaAl,colaAl);
-			EstrategiaDeComparacion estrategia = new PorDni();
-			Alumno alumno = new Alumno ("Maria", 12345678,999,9,estrategia);
 			llenarAlumnos(colaAl, estrategia);
 			llenarAlumnos(pilaAl, estrategia);
-			Console.WriteLine(coleccionAl.cuantos());		
 //			informarGeneral(coleccionAl);
 			
-			Conjunto conjunto = new Conjunto ();
-			conjunto.agregar(alumno);
-			conjunto.agregar(alumno);
+		
+			Diccionario diccionario = new Diccionario ();
+			diccionario.agregar(new Alumno ("Maria"));
+			diccionario.valorDe(new Numero(0));
 			
+						
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
 		}

@@ -8,21 +8,46 @@
 using System;
 
 namespace Practica2 {
-	
-	public class ClaveValor { //Clase auxiliar de Diccionario
-	
-		private Comparable clave;
-		private Numero valor;
+
+	public class ClaveValor : Comparable { //Clase auxiliar de Diccionario
+	 		
+		public static int contador = 0;
+		private Comparable clave; //id
+		private Object valor;
 		
 		public Comparable getClave {
 			set {clave = value;}
 			get {return clave;}
 		}
 		
-		public Numero getvalor {
+		public Object getvalor {
 			set { valor = value; }
 			get { return valor;  }
 		}
-		public ClaveValor() {}
+		
+		public ClaveValor(Object valor) {
+			ClaveValor.contador++;			
+			this.clave = new Numero(contador);
+			this.valor = valor;
+		}
+
+		//IComparable
+		public bool sosIgual(Comparable objeto) {
+			
+			return false;
+		}
+		
+		public bool sosMenor(Comparable objeto) {
+			return false;
+		}
+		
+		public bool sosMayor(Comparable objeto) {
+			return false;
+		}
+		
+		public void compararPorConsola (Coleccionable<Comparable> coleccionable) {
+			return;
+		}
+		
 	}
 }
