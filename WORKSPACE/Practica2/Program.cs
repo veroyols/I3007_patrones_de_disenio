@@ -25,11 +25,10 @@ namespace Practica2 {
 			llenarAlumnos(pilaAl, estrategia);
 //			informarGeneral(coleccionAl);
 			
-		
-			Diccionario diccionario = new Diccionario ();
-			diccionario.agregar(new Alumno ("Maria"));
-			diccionario.valorDe(new Numero(0));
 			
+			Diccionario diccionario = new Diccionario ();
+			diccionario.agregar(new Alumno ("Maria",50885165,1001,8.3 ));
+			diccionario.valorDe(new Numero(0)); //Diccionario ( Conjunto (C-V, C-V) ), diccionario.valorDe(C) --> V
 						
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);

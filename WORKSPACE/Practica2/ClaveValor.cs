@@ -26,9 +26,9 @@ namespace Practica2 {
 		}
 		
 		public ClaveValor(Object valor) {
-			ClaveValor.contador++;			
 			this.clave = new Numero(contador);
 			this.valor = valor;
+			ClaveValor.contador++;			
 		}
 
 		//IComparable

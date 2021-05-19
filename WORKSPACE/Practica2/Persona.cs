@@ -13,8 +13,8 @@ namespace Practica2 {
 	
 	public class Persona : Comparable {
 		
-		private string nombre;
-		private int dni;
+		protected string nombre;
+		protected int dni;
 		
 		public Persona(string nombre, int dni) {
 			this.nombre = nombre;

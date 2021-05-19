@@ -54,14 +54,15 @@ namespace Practica2 {
 			return;
 		}		
 		
-		public Object valorDe(Comparable clave) { /*valor asociada a la clave recibida / null si la clave no existe. clave id*/			
+		
+		public Object valorDe(Comparable clave) { /*valor asociada a la clave recibida / null si la clave no existe. clave id*/
 			for (int i = 0; i < conjunto.Elementos.Count; i++) {
 				if (((ClaveValor)(conjunto.Elementos[i])).getClave.sosIgual(clave)) {
 					Console.WriteLine(((ClaveValor)(conjunto.Elementos[i])).getvalor);
 					return ((ClaveValor)(conjunto.Elementos[i])).getvalor;
 				}
 			}
-			Console.WriteLine("no se encuentra la clave");
+			Console.WriteLine("No se encuentra la clave. ");
 			return null;
 		}
 		

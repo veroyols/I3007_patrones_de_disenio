@@ -106,7 +106,7 @@ namespace Practica2 {
 		}
 		
 		public override string ToString() {
-			return string.Format(">> Legajo N{0} - Alumnx = {1}	DNI {2} (Promedio = {3})", legajo, getNombre, getDni, promedio);
+			return string.Format(">> Id{0} {1} (DNI {2}) | Nota: {3})", legajo, getNombre, getDni, promedio);
 		}
 	}		
 }
