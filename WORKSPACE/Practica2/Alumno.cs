@@ -46,10 +46,6 @@ namespace Practica2 {
 			this.estrategia = e;
 		}
 		
-		public void cambiarEstrategia () {
-			
-		}
-		
 		/*EJERCICIO1*/
 		public override bool sosIgual(Comparable objeto) { 
 			return estrategia.sosIgual(objeto, this);

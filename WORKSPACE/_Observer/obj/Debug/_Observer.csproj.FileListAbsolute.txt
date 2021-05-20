@@ -1,0 +1,5 @@
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Observer\obj\Debug\_Observer.csprojResolveAssemblyReference.cache
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Observer\bin\Debug\_Observer.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Observer\bin\Debug\_Observer.pdb
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Observer\obj\Debug\_Observer.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Observer\obj\Debug\_Observer.pdb

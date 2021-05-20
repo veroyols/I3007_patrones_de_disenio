@@ -13,7 +13,7 @@ namespace _Template_Method {
 	class Program {
 		
 		public static void Main(string[] args) {
-			
+		
 			Console.WriteLine("********************");			
 			Console.WriteLine("* Cumpleaños de 15 *");
 			Console.WriteLine("********************");			

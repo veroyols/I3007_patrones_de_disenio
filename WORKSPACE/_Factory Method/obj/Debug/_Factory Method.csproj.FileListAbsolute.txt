@@ -1,0 +1,5 @@
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Factory Method\obj\Debug\_Factory Method.csprojResolveAssemblyReference.cache
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Factory Method\bin\Debug\_Factory Method.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Factory Method\bin\Debug\_Factory Method.pdb
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Factory Method\obj\Debug\_Factory Method.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Factory Method\obj\Debug\_Factory Method.pdb

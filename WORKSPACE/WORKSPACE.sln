@@ -12,6 +12,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica6", "Practica6\Prac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Template Method", "_Template Method\_Template Method.csproj", "{FCF1B64A-4029-412E-AE86-422818EAA08C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Factory Method", "_Factory Method\_Factory Method.csproj", "{8A9AA78B-C50A-4241-8471-F9CE3CCEFE22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Observer", "_Observer\_Observer.csproj", "{F43E91BA-74B7-4987-9114-165AE202894A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,5 +42,13 @@ Global
 		{FCF1B64A-4029-412E-AE86-422818EAA08C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FCF1B64A-4029-412E-AE86-422818EAA08C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FCF1B64A-4029-412E-AE86-422818EAA08C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A9AA78B-C50A-4241-8471-F9CE3CCEFE22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A9AA78B-C50A-4241-8471-F9CE3CCEFE22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A9AA78B-C50A-4241-8471-F9CE3CCEFE22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A9AA78B-C50A-4241-8471-F9CE3CCEFE22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F43E91BA-74B7-4987-9114-165AE202894A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F43E91BA-74B7-4987-9114-165AE202894A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F43E91BA-74B7-4987-9114-165AE202894A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F43E91BA-74B7-4987-9114-165AE202894A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 EndGlobal
