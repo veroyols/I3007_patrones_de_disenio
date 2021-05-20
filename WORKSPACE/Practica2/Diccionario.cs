@@ -10,9 +10,9 @@ using System;
 
 namespace Practica2 {
 
-	public class Diccionario : Coleccionable<Comparable> { //E4 
+	public class Diccionario : Coleccionable<Comparable>, Iterable { //E4 
 		
-		private Conjunto conjunto;
+		private Conjunto conjunto = new Conjunto();
 		
 		public Conjunto Conjunto {
 			set { conjunto = value; }
@@ -20,36 +20,55 @@ namespace Practica2 {
 		}
 				
 		public Diccionario() {
-			this.conjunto = new Conjunto ();
+//			this.conjunto = new Conjunto ();
 		}
 		
 		public Diccionario(Conjunto conjunto) {
 			this.conjunto = conjunto;
 		}
 		
+		//Iterable
+		public Iterador crearIterador() {
+			return new IteradorDeDiccionario(this);
+		}		
+		
 		//E5 - IColeccionable
-		/*minimo, máximo y contiene deben hacer referencia a los valores*/
-
-		public int cuantos() {
-			return 1;
-		}
-		
-		public Comparable minimo() {
-			Comparable num = new Numero();
-			return num;
-		}
-		
-		public Comparable maximo() {
-			Comparable num = new Numero();
-			return num;
+		public int cuantos() { //cdad de elem
+			return conjunto.cuantos();
 		}
 
-		public void agregar(Comparable valor) { /* agrega la clave-valor al diccionario. Si la clave existe, reemplaza el valor asociado.*/
+		public bool contiene(Comparable objeto) { //ref a valores
+			return conjunto.contiene(objeto);
+		}	
+		
+		public Comparable minimo() { //ref a valores
+			Comparable alucno = (Comparable)valorDe(new Numero(0));
+			
+			for (int i = 0; i < ClaveValor.contador; i++) {
+				if ( ((Comparable)valorDe(new Numero(i))).sosMenor(alucno) ){
+					alucno = (Comparable)valorDe(new Numero(i)); //diccionario.valorDe(C) --> V
+				}
+			}
+			return alucno;
+		}
+		
+		public Comparable maximo() { //ref a valores
+			Comparable alucno = (Comparable)valorDe(new Numero(0));
+			
+			for (int i = 0; i < ClaveValor.contador; i++) {
+				if ( ((Comparable)valorDe(new Numero(i))).sosMayor(alucno) ){
+					alucno = (Comparable)valorDe(new Numero(i)); 
+				}
+			}
+			return alucno;
+		}
+
+		public void agregar(Comparable valor) { 
 			conjunto.agregar(new ClaveValor(valor));
 			return;
 		}
 
-		public void agregar(Object valor) { /* agrega la clave-valor al diccionario. Si la clave existe, reemplaza el valor asociado.*/
+		public void agregar(Object valor) { /* agrega la clave-valor al diccionario. Si la clave existe, reemplaza el valor asociado?*/
 			conjunto.Elementos.Add(new ClaveValor(valor));
 			return;
 		}		
@@ -58,17 +77,19 @@ namespace Practica2 {
 		public Object valorDe(Comparable clave) { /*valor asociada a la clave recibida / null si la clave no existe. clave id*/
 			for (int i = 0; i < conjunto.Elementos.Count; i++) {
 				if (((ClaveValor)(conjunto.Elementos[i])).getClave.sosIgual(clave)) {
-					Console.WriteLine(((ClaveValor)(conjunto.Elementos[i])).getvalor);
+					//Console.WriteLine(((ClaveValor)(conjunto.Elementos[i])).getvalor);
 					return ((ClaveValor)(conjunto.Elementos[i])).getvalor;
 				}
 			}
 			Console.WriteLine("No se encuentra la clave. ");
 			return null;
+		}	
+
+		public override string ToString()
+		{
+			return string.Format("Diccionario");
 		}
 		
-		public bool contiene(Comparable objeto) {
-			return false;
-		}			
 	}
 }
 

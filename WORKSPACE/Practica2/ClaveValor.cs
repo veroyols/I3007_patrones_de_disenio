@@ -11,7 +11,7 @@ namespace Practica2 {
 
 	public class ClaveValor : Comparable { //Clase auxiliar de Diccionario
 	 		
-		public static int contador = 0;
+		public static int contador = 0; //clave unica por defecto
 		private Comparable clave; //id
 		private Object valor;
 		
@@ -48,6 +48,12 @@ namespace Practica2 {
 		public void compararPorConsola (Coleccionable<Comparable> coleccionable) {
 			return;
 		}
+		
+		public override string ToString()
+		{
+			return string.Format("Valor={0}", valor);
+		}
+
 		
 	}
 }

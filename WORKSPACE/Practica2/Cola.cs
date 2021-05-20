@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Practica2 {
 
-	public class Cola : Coleccionable<Comparable> { //FIFO
+	public class Cola : Coleccionable<Comparable>, Iterable { //FIFO
 		
 		private List<Comparable> elementos;
 	
@@ -23,6 +23,12 @@ namespace Practica2 {
 			elementos = new List<Comparable>();  
 		}
 		
+		//Iterable
+		public Iterador crearIterador() {
+			return new IteradorDeCola(this);
+		}		
+		
+		//Coleccionable
 		public int cuantos() { 
 			return elementos.Count;
 		}

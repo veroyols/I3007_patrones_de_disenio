@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Practica2 {
 	
-	public class Pila : Coleccionable<Comparable> { //LIFO
+	public class Pila : Coleccionable<Comparable>, Iterable { //LIFO
 		
 		private List<Comparable> elementos;
 	
@@ -22,7 +22,13 @@ namespace Practica2 {
 		public Pila() {
 			elementos = new List<Comparable>();  
 		}
+				
+		//Iterable
+		public Iterador crearIterador() {
+			return new IteradorDePila(this);
+		}
 		
+		//coleccionable
 		public int cuantos() { 
 			return elementos.Count;
 		}

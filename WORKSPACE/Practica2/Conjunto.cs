@@ -10,19 +10,24 @@ using System.Collections.Generic;
 	
 namespace Practica2 {
 	
-	public class Conjunto :  Coleccionable<Comparable> { //lista de elementos sin repeticion
+	public class Conjunto :  Coleccionable<Comparable>, Iterable { //lista de elementos sin repeticion
 		
 		private List<Comparable> elementos;
 	
 		public List<Comparable> Elementos { 
 			set { elementos = value; } 
 			get { return elementos; } 
-		}
-
+		}		
+		
 		public Conjunto() {
 			elementos = new List<Comparable>();
 			}
 	
+		//Iterable
+		public Iterador crearIterador() {
+			return new IteradorDeConjunto(this);
+		}	
+		
 		public bool pertenece (Comparable comparable) { //E3
 			if (elementos == null ) {
 				return false;
@@ -31,6 +36,7 @@ namespace Practica2 {
 					return true; 
 			return false;
 		}
+
 		//IColeccionable
 		public void agregar (Comparable comparable) { //E3 (obj)
 			if (pertenece(comparable)) {
@@ -43,21 +49,41 @@ namespace Practica2 {
 		}
 		
 		public int cuantos() {
-			return 1;
+			return elementos.Count;
 		}
 		
 		public Comparable minimo() {
-			Comparable num = new Numero();
-			return num;
+			Comparable min = elementos[0];
+			for (int i = 0; i < cuantos(); i++) {
+				if ((elementos[i]).sosMenor(min) ) {
+					min = elementos[i];
+				}
+			}
+			return min;
 		}
 		
 		public Comparable maximo() {
-			Comparable num = new Numero();
-			return num;
+			Comparable max = elementos[0];
+			for (int i = 0; i < cuantos(); i++) {
+				if ((elementos[i]).sosMayor(max) ) {
+					max = elementos[i];
+				}
+			}
+			return max;
 		}
 			
 		public bool contiene(Comparable objeto) {
-			return false;
-		}		
+			bool cont = false;
+			foreach (Comparable element in elementos) {
+				if (element.sosIgual(objeto))
+					cont = true;
+				}
+			return cont; 
+		}
+
+		public override string ToString() {
+			return string.Format("Conjunto");
+		}
+		
 	}
 }

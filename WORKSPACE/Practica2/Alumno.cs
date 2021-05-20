@@ -11,9 +11,9 @@ namespace Practica2 {
 	
 	public class Alumno : Persona { 
 		
-		private int legajo;
-		private double promedio;
-		private EstrategiaDeComparacion estrategia;
+		protected int legajo;
+		protected double promedio;
+		protected EstrategiaDeComparacion estrategia;
 		
 		//get - set
 		public int getLegajo {
@@ -43,7 +43,11 @@ namespace Practica2 {
 		public Alumno(string n , int d, int l, double p, EstrategiaDeComparacion e) : base (n,d) {
 			this.legajo = l;
 			this.promedio = p;
-			this.getEstrategia = e;
+			this.estrategia = e;
+		}
+		
+		public void cambiarEstrategia () {
+			
 		}
 		
 		/*EJERCICIO1*/
@@ -106,7 +110,7 @@ namespace Practica2 {
 		}
 		
 		public override string ToString() {
-			return string.Format(">> Id{0} {1} (DNI {2}) | Nota: {3})", legajo, getNombre, getDni, promedio);
+			return string.Format(">> Id{0} {1} DNI {2} (Nota: {3})", legajo, getNombre, getDni, promedio);
 		}
 	}		
 }

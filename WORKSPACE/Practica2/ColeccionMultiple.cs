@@ -10,18 +10,27 @@ using System.Collections.Generic;
 
 namespace Practica2 {
 	
-	public class ColeccionMultiple : Coleccionable<Comparable> {
+	public class ColeccionMultiple : Coleccionable<Comparable>, Iterable {
 	
-		public Pila pila = new Pila();
-		public Cola cola = new Cola();
+		public Pila pila;
+		public Cola cola;
 
 		public ColeccionMultiple(Pila p, Cola c) {
 			this.pila = p;
 			this.cola = c;
 		}
 		
-		public ColeccionMultiple() { }
+		public ColeccionMultiple() {
+			pila = new Pila();
+			cola = new Cola();
+		}
 
+		//Iterable
+		public Iterador crearIterador() {
+			return new IteradorDeColeccionMultiple(this);
+		}		
+		
+		//Coleccionable
 		public int cuantos() {
 			return pila.cuantos() + cola.cuantos();
 		}

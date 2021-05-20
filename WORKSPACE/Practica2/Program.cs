@@ -17,20 +17,48 @@ namespace Practica2 {
 
 		public static void Main(string[] args) {
 			
-			Pila pilaAl = new Pila();
+			//E10
 			EstrategiaDeComparacion estrategia = new PorDni();
-			Cola colaAl = new Cola();
-			ColeccionMultiple coleccionAl = new ColeccionMultiple (pilaAl,colaAl);
-			llenarAlumnos(colaAl, estrategia);
-			llenarAlumnos(pilaAl, estrategia);
-//			informarGeneral(coleccionAl);
 			
+			Pila pila = new Pila();
+			Cola cola = new Cola();
+			Conjunto conjunto = new Conjunto();
+			Diccionario diccionario = new Diccionario();
+			llenarAlumnos(pila, estrategia);
+			llenarAlumnos(cola, estrategia);
+			llenarAlumnos(conjunto, estrategia);
+			llenarAlumnos(diccionario, estrategia);
 			
-			Diccionario diccionario = new Diccionario ();
-			diccionario.agregar(new Alumno ("Maria",50885165,1001,8.3 ));
-			diccionario.valorDe(new Numero(0)); //Diccionario ( Conjunto (C-V, C-V) ), diccionario.valorDe(C) --> V
-						
-			Console.Write("Press any key to continue . . . ");
+			cambiarEstrategia(pila, new PorLegajo());
+			Console.WriteLine(((Alumno)pila.minimo()).getEstrategia);
+			imprimirElementos(pila);
+			Console.ReadKey(true);
+			
+			Console.Clear();			
+			cambiarEstrategia(cola, new PorLegajo());
+			imprimirElementos(cola);
+			Console.ReadKey(true);
+			
+			Console.Clear();
+			cambiarEstrategia(conjunto, new PorLegajo());
+			imprimirElementos(conjunto);
+			Console.ReadKey(true);
+			
+			Console.Clear();
+			//cambiarEstrategia(diccionario, new PorPromedio()); ERROR
+			imprimirElementos(diccionario);
+			Console.ReadKey(true);
+			
+			Console.Clear();
+			ColeccionMultiple coleccionAl = new ColeccionMultiple (pila,cola);
+			cambiarEstrategia(coleccionAl, new PorLegajo());
+			imprimirMejorPromedio(coleccionAl); //E13
+
+//			Diccionario diccionario = new Diccionario ();
+//			diccionario.agregar(new Alumno ("Maria",50885165,1000,8.3, estrategia )); //nom, dni, legajo, promedio
+//			Console.WriteLine(diccionario.valorDe(new Numero(20))); //diccionario.valorDe(C) --> V (devuelve Maria)	
+			
+			Console.Write("\n	. . . ");
 			Console.ReadKey(true);
 		}
 
@@ -41,7 +69,7 @@ namespace Practica2 {
 				coleccionable.agregar(new Alumno (lista[(unicoRandomGlobal.Next(1,99))%20], //nombre
 				                                  (unicoRandomGlobal.Next(12000000,50000000)) , //dni
 				                                  i+1, //legajo
-				                                  ((unicoRandomGlobal.Next(1,1000))/100),// promedio
+				                                  ((double)(unicoRandomGlobal.Next(1,1000))/100),// promedio
 				                                  estrategia)); //estrategia
 			}
 		}
@@ -51,7 +79,41 @@ namespace Practica2 {
 			Console.WriteLine("La {0} posee {1} elementos.", coleccionable.ToString(), coleccionable.cuantos());
 			Console.WriteLine("Minimo >> " + (coleccionable.minimo()));
 			Console.WriteLine("Maximo >> " + (coleccionable.maximo()));	
-			(coleccionable.minimo()).compararPorConsola(coleccionable);
+			(coleccionable.minimo()).compararPorConsola(coleccionable); //Falta Cargar Alumno por consola, compara con el minimo
+		}
+		
+		public static void imprimirElementos (Coleccionable<Comparable> coleccionable) {
+			Console.WriteLine("------------------------"); //EJERCICIO 6		
+			Console.WriteLine("---Imprimir Elementos---");
+			Iterador IteradorDeColeccion = coleccionable.crearIterador();
+			Console.WriteLine("Imprimir {0} ",coleccionable);
+			while(!IteradorDeColeccion.fin()){
+				
+				Console.WriteLine(IteradorDeColeccion.actual());
+				IteradorDeColeccion.siguiente();
+			}
+		}
+		
+		public static void imprimirMejorPromedio (Coleccionable<Comparable> coleccionable) {
+			cambiarEstrategia(coleccionable, new PorPromedio());
+			Console.WriteLine("-----------------------"); 
+			Console.WriteLine("---Mejores Promedios---");
+			Iterador IteradorDeColeccion = coleccionable.crearIterador();
+			Console.WriteLine("Imprimir {0} ",coleccionable);
+			while(!IteradorDeColeccion.fin()){
+				if (((Alumno)IteradorDeColeccion.actual()).sosMayor(new Alumno("",0,0,7 ) ) ) {
+					Console.WriteLine(IteradorDeColeccion.actual());
+				}
+				IteradorDeColeccion.siguiente();
+			}
+		}		
+		
+		public static void cambiarEstrategia (Coleccionable<Comparable> coleccion, EstrategiaDeComparacion estrategia) { //EJERCICIO 9
+			Iterador IteradorDeColeccion = coleccion.crearIterador();
+			while(!IteradorDeColeccion.fin()){
+				((Alumno)IteradorDeColeccion.actual()).getEstrategia = estrategia;
+				IteradorDeColeccion.siguiente();
+			}	
 		}
 	}
 }
