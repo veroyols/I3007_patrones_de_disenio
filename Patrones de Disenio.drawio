@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-05-19T23:28:46.470Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="h8B-h7xjVqFsoIIFJ758" version="14.6.13" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-05-20T03:42:47.508Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="SVd4y9NVRrEBBVHgJJ85" version="14.6.13" type="github" pages="3">
   <diagram name="2 ITERATOR" id="e7e014a7-5840-1c2e-5031-d8a46d1fe8dd">
-    <mxGraphModel dx="2037" dy="520" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="2277" dy="520" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -16,8 +16,8 @@
         <mxCell id="JFeSRVVw9KBUbHDQCU6g-49" value="Operaciones()" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="JFeSRVVw9KBUbHDQCU6g-48">
           <mxGeometry y="40" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="JFeSRVVw9KBUbHDQCU6g-50" value="&lt;h1 style=&quot;text-align: justify&quot;&gt;&lt;font color=&quot;#1a1a1a&quot;&gt;Iterator&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span style=&quot;color: rgb(26 , 26 , 26)&quot;&gt;Permite de recorrer todos los elementos de CUALQUIER estructura de datos secuencialmente (independientemente de la estructura)&lt;/span&gt;&lt;/div&gt;&lt;font color=&quot;#1a1a1a&quot;&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;El patron iterador me da los elementos que necesito de la estructura.&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;&amp;nbsp;*ITERADOR: El mecanismo por el que recorremos la secuencia de inicio a fin. gracias al&amp;nbsp;&lt;/span&gt;&lt;span&gt;ENUMERADOR, responsable de sacar el elemento siguiente (segun las reglas de la secuencia enumerable)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;Ejemplo: c# provee el patron iterador: foreach&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;Implementacion - Interfaces importantes:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;&amp;nbsp;*ENUMERATOR: define al enumerador&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;&amp;nbsp;*ENUMERABLE: indica que la clase puede ser usada por el iterador&lt;/span&gt;&lt;/div&gt;&lt;/font&gt;&lt;p&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;align=center;" vertex="1" parent="1">
-          <mxGeometry x="10" y="10" width="380" height="210" as="geometry" />
+        <mxCell id="JFeSRVVw9KBUbHDQCU6g-50" value="&lt;h1 style=&quot;text-align: justify&quot;&gt;&lt;font color=&quot;#1a1a1a&quot;&gt;Iterator&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span style=&quot;color: rgb(26 , 26 , 26)&quot;&gt;Permite de recorrer todos los elementos de CUALQUIER estructura de datos secuencialmente (independientemente de la estructura)&lt;/span&gt;&lt;/div&gt;&lt;font color=&quot;#1a1a1a&quot;&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;El patron iterador me da los elementos que necesito de la estructura.&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;&amp;nbsp;*ITERADOR: El mecanismo por el que recorremos la secuencia de inicio a fin. gracias al&amp;nbsp;&lt;/span&gt;&lt;span&gt;ENUMERADOR, responsable de sacar el elemento siguiente (segun las reglas de la secuencia enumerable)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;Ejemplo: c# provee el patron iterador: foreach&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;Implementacion - Interfaces importantes:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;&amp;nbsp;*ENUMERATOR: define al enumerador&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;&amp;nbsp;*ENUMERABLE: indica que la clase puede ser usada por el iterador&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify&quot;&gt;&lt;span&gt;El iterable puede crear a su iterador.&lt;/span&gt;&lt;/div&gt;&lt;/font&gt;&lt;p&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="10" y="10" width="380" height="270" as="geometry" />
         </mxCell>
         <mxCell id="JFeSRVVw9KBUbHDQCU6g-52" value="CLIENTE" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
           <mxGeometry x="625" y="23" width="100" height="40" as="geometry" />
@@ -230,6 +230,130 @@
             <Array as="points">
               <mxPoint x="400" y="720" />
               <mxPoint x="220" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-4" value="«interface»&#xa;Iterador" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="1175" y="390" width="160" height="144" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-5" value="Iterable actual()&#xa;" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2lq2OYKsWKOns44vndsd-4">
+          <mxGeometry y="40" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-6" value="void primero()&#xa;" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2lq2OYKsWKOns44vndsd-4">
+          <mxGeometry y="66" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-7" value="void siguiente()&#xa;" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2lq2OYKsWKOns44vndsd-4">
+          <mxGeometry y="92" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-8" value="bool fin()&#xa;" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2lq2OYKsWKOns44vndsd-4">
+          <mxGeometry y="118" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-9" value="main" style="rounded=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="396" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-10" value="" style="endArrow=classic;html=1;dashed=1;" edge="1" parent="1" source="2lq2OYKsWKOns44vndsd-9" target="2lq2OYKsWKOns44vndsd-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1090" y="532" as="sourcePoint" />
+            <mxPoint x="1140" y="482" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-11" value="" style="endArrow=classic;html=1;dashed=1;entryX=0.013;entryY=0.181;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2lq2OYKsWKOns44vndsd-9" target="2lq2OYKsWKOns44vndsd-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1090" y="532" as="sourcePoint" />
+            <mxPoint x="1140" y="482" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-12" value="IteradorDeCola" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="1085" y="571" width="160" height="134" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-13" value="Iterable actual()&#xa;" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2lq2OYKsWKOns44vndsd-12">
+          <mxGeometry y="30" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-14" value="void primero()&#xa;" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2lq2OYKsWKOns44vndsd-12">
+          <mxGeometry y="56" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-15" value="void siguiente()&#xa;" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2lq2OYKsWKOns44vndsd-12">
+          <mxGeometry y="82" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-16" value="bool fin()&#xa;" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2lq2OYKsWKOns44vndsd-12">
+          <mxGeometry y="108" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-17" value="Cola" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="905" y="493" width="160" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-20" value="" style="endArrow=block;html=1;endFill=1;endSize=8;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="2lq2OYKsWKOns44vndsd-17" target="2lq2OYKsWKOns44vndsd-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1090" y="585" as="sourcePoint" />
+            <mxPoint x="890" y="581" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-21" value="" style="endArrow=block;html=1;endFill=1;endSize=8;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="2lq2OYKsWKOns44vndsd-12" target="2lq2OYKsWKOns44vndsd-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1010" y="532" as="sourcePoint" />
+            <mxPoint x="1060" y="482" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1165" y="563" />
+              <mxPoint x="1255" y="563" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-22" value="" style="endArrow=diamond;html=1;endFill=1;endSize=8;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="2lq2OYKsWKOns44vndsd-30" target="2lq2OYKsWKOns44vndsd-26">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1090" y="532" as="sourcePoint" />
+            <mxPoint x="1140" y="482" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1345" y="753" />
+              <mxPoint x="805" y="753" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-23" value="«interface»&#xa;Iterable" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="810" y="383" width="160" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-24" value="CrearIterador()" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2lq2OYKsWKOns44vndsd-23">
+          <mxGeometry y="40" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-26" value="Pila" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="710" y="493" width="160" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-29" value="" style="endArrow=block;html=1;endFill=1;endSize=8;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="2lq2OYKsWKOns44vndsd-26" target="2lq2OYKsWKOns44vndsd-23">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1090" y="585" as="sourcePoint" />
+            <mxPoint x="890" y="581" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-30" value="IteradorDePila" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="1265" y="571" width="160" height="134" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-31" value="Iterable actual()&#xa;" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2lq2OYKsWKOns44vndsd-30">
+          <mxGeometry y="30" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-32" value="void primero()&#xa;" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2lq2OYKsWKOns44vndsd-30">
+          <mxGeometry y="56" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-33" value="void siguiente()&#xa;" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2lq2OYKsWKOns44vndsd-30">
+          <mxGeometry y="82" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-34" value="bool fin()&#xa;" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2lq2OYKsWKOns44vndsd-30">
+          <mxGeometry y="108" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-35" value="" style="endArrow=block;html=1;endFill=1;endSize=8;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="2lq2OYKsWKOns44vndsd-30" target="2lq2OYKsWKOns44vndsd-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1010" y="532" as="sourcePoint" />
+            <mxPoint x="1060" y="482" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1345" y="563" />
+              <mxPoint x="1255" y="563" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2lq2OYKsWKOns44vndsd-36" value="" style="endArrow=diamond;html=1;endFill=1;endSize=8;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="2lq2OYKsWKOns44vndsd-12" target="2lq2OYKsWKOns44vndsd-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1090" y="532" as="sourcePoint" />
+            <mxPoint x="1140" y="482" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1165" y="733" />
+              <mxPoint x="985" y="733" />
             </Array>
           </mxGeometry>
         </mxCell>
