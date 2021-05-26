@@ -16,7 +16,7 @@ namespace Practica3 {
 		/*numeroAleatorio(max)  Devuelve un número aleatorio entre 0 y max*/
 		public int numeroAleatorio (int max) {
 			return (random.Next(99999999)) % (max+1);
-		} //E1
+		} //E2
 		
 		/*stringAleatorio(cant)  Devuelve un string aleatorio de cant caracteres*/
 		public string stringAleatorio (int cant) {
@@ -26,7 +26,7 @@ namespace Practica3 {
 				palabra += letras[numeroAleatorio(25)];
 			}
 			return palabra;
-		} //E1
+		} //E2
 		
 		public GeneradorDeDatosAleatorio() {}
 	}

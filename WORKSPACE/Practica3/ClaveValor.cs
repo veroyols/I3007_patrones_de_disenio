@@ -31,6 +31,11 @@ namespace Practica3 {
 			ClaveValor.contador++;			
 		}
 
+		public ClaveValor() {
+			this.clave = new Numero(contador);
+			ClaveValor.contador++;			
+		} //para P3 E4
+
 		//IComparable
 		public bool sosIgual(Comparable objeto) {	
 			return false;

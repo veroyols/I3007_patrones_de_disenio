@@ -14,14 +14,13 @@ namespace Practica3 {
 		
 		/*numeroPorTeclado()  devuelve un número leído por teclado*/
 		public int numeroPorTeclado () {
-			Console.WriteLine("Ingrese un numero");
 			return int.Parse(Console.ReadLine());
-		}
+		}//E3
+		
 		/*stringPorTeclado()  devuelve un string leído por teclado*/
 		public string stringPorTeclado () {
-			Console.WriteLine("Ingrese un string");
 			return Console.ReadLine();
-		}
+		}//E3
 		
 		public LectorDeDatos() {}
 		
