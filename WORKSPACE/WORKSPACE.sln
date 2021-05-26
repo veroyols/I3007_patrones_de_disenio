@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Factory Method", "_Factory
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Observer", "_Observer\_Observer.csproj", "{F43E91BA-74B7-4987-9114-165AE202894A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica3", "Practica3\Practica3.csproj", "{3AD1EF09-8C2E-4175-9024-EAD14F968E69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,5 +52,9 @@ Global
 		{F43E91BA-74B7-4987-9114-165AE202894A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F43E91BA-74B7-4987-9114-165AE202894A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F43E91BA-74B7-4987-9114-165AE202894A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AD1EF09-8C2E-4175-9024-EAD14F968E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AD1EF09-8C2E-4175-9024-EAD14F968E69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AD1EF09-8C2E-4175-9024-EAD14F968E69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AD1EF09-8C2E-4175-9024-EAD14F968E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 EndGlobal
