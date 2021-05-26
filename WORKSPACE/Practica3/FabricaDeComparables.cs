@@ -11,64 +11,74 @@ namespace Practica3 {
 	
 	public abstract class FabricaDeComparables {
 		
+		protected GeneradorDeDatosAleatorio generador = new GeneradorDeDatosAleatorio();
 		public const int ALUMNO = 1;
-		public const int PERSONA = 2;
-		public const int NUMERO = 3;
-		public const int CLAVEVALOR = 4;
+		public const int NUMERO = 2;
 			
-		public static Comparable crear (int queComparable){
+		public static Comparable crearAleatorio (int queComparable){
 			FabricaDeComparables fabrica = null;
 		
 			switch(queComparable){
 				case ALUMNO: 
 			        fabrica = new FabricaDeAlumno();
 			        break;
-				case PERSONA:
-			        fabrica = new FabricaDePersona();
+			    case NUMERO:
+			        fabrica = new FabricaDeNumero();
+			        break;
+			}
+		return fabrica.crearComparableAleatorio();
+		}
+		public static Comparable crearPorTeclado (int queComparable){
+			FabricaDeComparables fabrica = null;
+		
+			switch(queComparable){
+				case ALUMNO: 
+			        fabrica = new FabricaDeAlumno();
 			        break;
 			    case NUMERO:
 			        fabrica = new FabricaDeNumero();
 			        break;
-			    case CLAVEVALOR:
-			        fabrica = new FabricaDeClaveValor();
-			        break;
 			}
-		return fabrica.crearComparable();
+		return fabrica.crearComparablePorTeclado();
 		}
-		
-		public static Comparable crearAleatorio(){
-			GeneradorDeDatosAleatorio generador = new GeneradorDeDatosAleatorio();
-			return FabricaDeComparables.crear(generador.numeroAleatorio(3) + 1);
-		}/*crearAleatorio()  Devuelve un Comparable generado aleatoriamente*/
-		
-		public static Comparable crearPorTeclado(){
-			Console.WriteLine("Ingrese un numero: \n(1)ALUMNO \n(2)PERSONA \n(3)NUMERO \n(4)CLAVEVALOR");
-			int queComparable = int.Parse(Console.ReadLine());
-			return FabricaDeComparables.crear(queComparable);
-		}/* crearPorTeclado()  Devuelve un comparable donde los datos se ingresan por teclado*/
-
-		public abstract Comparable crearComparable();		
+		public abstract Comparable crearComparableAleatorio();		
+		public abstract Comparable crearComparablePorTeclado();		
 	}
 	
-		public class FabricaDeAlumno : FabricaDeComparables{
-			override public Comparable crearComparable(){
-				return new Alumno();
+	public class FabricaDeAlumno : FabricaDeComparables{
+		public static int legajo = 100;
+		public override Comparable crearComparableAleatorio(){
+			string nombre = generador.stringAleatorio(4);
+			int dni = generador.numeroAleatorio(99999999);
+			legajo++;
+			double promedio = generador.numeroAleatorio(1000) /100.00;
+			//estrategia por defecto en Alumno
+			return new Alumno(nombre,dni,legajo,promedio);
+		}	
+		public override Comparable crearComparablePorTeclado(){
+			Console.Write("Ingrese nombre: ");
+			string nombre = Console.ReadLine();
+			Console.Write("Ingrese dni: ");
+			int dni = int.Parse(Console.ReadLine());
+			Console.Write("Ingrese legajo: ");
+			int legajo = int.Parse(Console.ReadLine());
+			Console.Write("Ingrese promedio: ");
+			int promedio = int.Parse(Console.ReadLine());
+			//estrategia por defecto en Alumno
+			return new Alumno(nombre,dni,legajo,promedio);
+		}		
+	}
+		
+	public class FabricaDeNumero: FabricaDeComparables{
+		public override Comparable crearComparableAleatorio(){
+			return new Numero(generador.numeroAleatorio(1000));
+		}
+		public override Comparable crearComparablePorTeclado(){
+			Console.WriteLine("Ingrese numero entero");
+			return new Numero(int.Parse(Console.ReadLine()));
 		}
 	}
-		public class FabricaDePersona : FabricaDeComparables{
-			override public Comparable crearComparable(){
-				return new Persona();
-		}
-	}
-		public class FabricaDeNumero: FabricaDeComparables{
-			override public Comparable crearComparable(){
-				return new Numero();
-		}
-	}
-		public class FabricaDeClaveValor: FabricaDeComparables{
-			override public Comparable crearComparable(){
-				return new ClaveValor();
-		}
-	}	
 }
+	
+	
 

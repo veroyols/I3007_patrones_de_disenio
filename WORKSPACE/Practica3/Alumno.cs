@@ -13,7 +13,7 @@ namespace Practica3 {
 		
 		private int legajo;
 		private double promedio;
-		private EstrategiaDeComparacion estrategia;
+		private EstrategiaDeComparacion estrategia = new PorDni();
 		
 		public int getLegajo {
 			get { return legajo;}
@@ -55,54 +55,9 @@ namespace Practica3 {
 
 		public override bool sosMayor(Comparable objeto) { 
 			return estrategia.sosMayor(objeto, this);
-		}
-
-		public override void compararPorConsola (Coleccionable<Comparable> coleccionable) { 
-			Console.WriteLine(this.ToString());
-			Console.WriteLine("Comparar por: \n1.Nombre \n2.Dni \n3.Legajo \n4.Promedio");
-
-			int opcion = int.Parse(Console.ReadLine());
-			switch (opcion) {
-				case 1:
-					this.getEstrategia = new PorNombre();
-					if (coleccionable.contiene(this)) {
-							Console.WriteLine("El alumno {0} se encuentra en la {1}",this.getNombre,coleccionable.ToString());
-							break;
-						}
-					Console.WriteLine("El alumno {0} NO se encuentra en la {1}",this.getNombre,coleccionable.ToString());
-					break;
-				case 2:
-					this.getEstrategia = new PorDni();
-					if (coleccionable.contiene(this)) {
-							Console.WriteLine("El DNI {0} se encuentra en la {1}",this.getDni,coleccionable.ToString());
-							break;
-						}
-					Console.WriteLine("El DNI {0} NO se encuentra en la {1}",this.getDni,coleccionable.ToString());
-					break;
-				case 3:
-					this.getEstrategia = new PorLegajo();
-					if (coleccionable.contiene(this)) {
-							Console.WriteLine("El Legajo N {0} se encuentra en la {1}",this.getLegajo,coleccionable.ToString());
-							break;
-						}
-					Console.WriteLine("El Legajo N {0} NO se encuentra en la {1}",this.getLegajo,coleccionable.ToString());
-					break;				
-				case 4:
-					getEstrategia = new PorPromedio();
-					if (coleccionable.contiene(this)) {
-							Console.WriteLine("El Promedio N {0} se encuentra en la {1}",this.getPromedio,coleccionable.ToString());
-							break;
-						}
-					Console.WriteLine("El Promedio N {0} NO se encuentra en la {1}",this.getPromedio,coleccionable.ToString());
-					break;	
-				default:
-					Console.WriteLine("--------FIN-INFORME--------\n");	
-					break;
-			}
-		}
-		
+		}		
 		public override string ToString() {
-			return string.Format(">> Id{0} {1} DNI {2} (Nota: {3})", legajo, getNombre, getDni, promedio);
+			return string.Format(">> Id{0} {1} DNI {2} (Nota: {3}) - Compara por {4}", legajo, getNombre, getDni, promedio, estrategia);
 		}
 	}		
 }

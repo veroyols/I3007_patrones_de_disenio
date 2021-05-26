@@ -61,7 +61,7 @@ namespace Practica3 {
 		}
 		
 		public override string ToString() {
-			return string.Format(">> Numero Valor = {0}", valor);
+			return string.Format(">> Numero = {0}", valor);
 		}	
 	}
 }

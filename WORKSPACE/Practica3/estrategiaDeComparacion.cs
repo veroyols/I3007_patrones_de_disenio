@@ -28,6 +28,9 @@ namespace Practica3 {
 		public bool sosMenor(Comparable objeto, Comparable objeto2) { 
 			return false;
 		} //false
+		public override string ToString() {
+			return "Nombre";
+		}
 	}
 		
 	public class PorDni : EstrategiaDeComparacion {
@@ -48,6 +51,9 @@ namespace Practica3 {
 			if (((Alumno)objeto).getDni > ((Alumno)objeto2).getDni)
 				menor = true;
 			return menor;
+		}
+		public override string ToString() {
+			return "Dni";
 		}
 	}
 	
@@ -70,6 +76,9 @@ namespace Practica3 {
 				menor = true;
 			return menor;
 		}
+		public override string ToString() {
+			return "Legajo";
+		}
 	}
 	
 	public class PorPromedio : EstrategiaDeComparacion {	
@@ -90,6 +99,9 @@ namespace Practica3 {
 			if (((Alumno)objeto).getPromedio > ((Alumno)objeto2).getPromedio)
 				menor = true;
 			return menor;
+		}
+		public override string ToString() {
+			return "Promedio";
 		}
 	}
 }
