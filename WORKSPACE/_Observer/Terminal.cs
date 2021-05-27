@@ -16,7 +16,7 @@ namespace _Observer
 		void notificar();
 	}
 
-	public interface IObservador {	}
+	public interface IObservador {}//actualiza	
 	
 	public interface IObservadorDeTerminales : IObservador {
 		void actualizar(Terminal t);

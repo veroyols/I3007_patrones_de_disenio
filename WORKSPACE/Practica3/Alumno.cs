@@ -13,7 +13,6 @@ namespace Practica3 {
 		
 		private int legajo;
 		private double promedio;
-		private EstrategiaDeComparacion estrategia = new PorDni();
 		
 		public int getLegajo {
 			get { return legajo;}
@@ -23,15 +22,15 @@ namespace Practica3 {
 			get { return promedio;}
 			set { promedio = value;}
 		}	
-		public EstrategiaDeComparacion getEstrategia {
-			get { return estrategia; }
-			set { estrategia = value;}
-		}
 
 		public Alumno() {}
 
 		public Alumno(string nombre) {
 			this.getNombre = nombre;
+		}
+
+		public Alumno(double promedio) {
+			this.promedio = promedio;
 		}
 		
 		public Alumno(string n , int d, int l, double p) : base (n,d) {
@@ -39,23 +38,12 @@ namespace Practica3 {
 			this.promedio = p;
 		}
 	
-		public Alumno(string n , int d, int l, double p, EstrategiaDeComparacion e) : base (n,d) {
+		public Alumno(string n , int d, int l, double p, EstrategiaDeComparacion e) : base (n,d,e) {
 			this.legajo = l;
 			this.promedio = p;
 			this.estrategia = e;
 		}
-		
-		public override bool sosIgual(Comparable objeto) { 
-			return estrategia.sosIgual(objeto, this);
-		}
-
-		public override bool sosMenor(Comparable objeto) { 
-			return estrategia.sosMenor(objeto, this);
-		}
-
-		public override bool sosMayor(Comparable objeto) { 
-			return estrategia.sosMayor(objeto, this);
-		}		
+				
 		public override string ToString() {
 			return string.Format(">> Id{0} {1} DNI {2} (Nota: {3}) - Compara por {4}", legajo, getNombre, getDni, promedio, estrategia);
 		}

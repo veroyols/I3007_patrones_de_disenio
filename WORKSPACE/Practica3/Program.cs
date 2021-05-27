@@ -12,36 +12,31 @@ namespace Practica3 {
 	class Program {
 		
 		public static void Main(string[] args) {
-				
-			Pila pilaDeComparables = new Pila();
-			Console.WriteLine("Llenar pila con: \n(1)ALUMNO \n(2)PERSONA \n(3)NUMERO \n(4)CLAVEVALOR");
-			int queComparable = int.Parse(Console.ReadLine());
-			llenar(pilaDeComparables, queComparable);
-			informar(pilaDeComparables, queComparable);
-			imprimirElementos(pilaDeComparables);
+							
+//			Informe.informar(diccionario, queComparable);//diccionario.contiene(comparable) devuelve false		
+	
+			Coleccionable<Comparable> coleccion = new Pila();
+			int opción_para_crear_vendedores = 3;
+			llenar(coleccion, opción_para_crear_vendedores);
+			Gerente gerente = new Gerente();
+			//hacer que gerente sea observador de todos los vendedores
+			//gerente.agregarObservado(vendedor);
+			jornadaDeVentas(coleccion);
+			gerente.cerrar();
+			imprimirElementos(gerente.getMejores);
+						
 			Console.WriteLine("...");
 			Console.ReadKey(true);
 		}		
 
-		public static void llenar(Coleccionable<Comparable> coleccionable, int queComparable){ 
-			for (int i = 0; i < 20; i++) {
-				coleccionable.agregar(FabricaDeComparables.crearAleatorio(queComparable));
+		public static void llenar(Coleccionable<Comparable> coleccion, int queComparable){ 
+			Iterador iteradorDeColeccion = coleccion.crearIterador();
+			for (int i = 0; i < 20; i++) { //E6
+				coleccion.agregar(FabricaDeComparables.crearAleatorio(queComparable));
+				iteradorDeColeccion.siguiente();			
 			}
-		}//E6
+		}//E7
 		
-		public static void informar (Coleccionable<Comparable> coleccionable, int queComparable) { 
-			Console.WriteLine("----------INFORME----------");
-			Console.WriteLine("La {0} posee {1} elementos.", coleccionable.ToString(), coleccionable.cuantos());
-			Console.WriteLine("Minimo >> " + (coleccionable.minimo()));
-			Console.WriteLine("Maximo >> " + (coleccionable.maximo()));	
-			Comparable comparable = FabricaDeComparables.crearPorTeclado(queComparable);
-			if (coleccionable.contiene(comparable)) {
-				Console.WriteLine("El elemento leído está en la colección");
-			}
-			else {
-				Console.WriteLine("El elemento leído NO está en la colección");
-			}
-		}//E6
 		
 		public static void imprimirElementos (Coleccionable<Comparable> coleccionable) {
 			Console.WriteLine("------------------------"); 		
@@ -67,13 +62,17 @@ namespace Practica3 {
 				IteradorDeColeccion.siguiente();
 			}
 		}		
-		
 		public static void cambiarEstrategia (Coleccionable<Comparable> coleccion, EstrategiaDeComparacion estrategia) {
 			Iterador IteradorDeColeccion = coleccion.crearIterador();
 			while(!IteradorDeColeccion.fin()){
-				((Alumno)IteradorDeColeccion.actual()).getEstrategia = estrategia;
+				((Persona)IteradorDeColeccion.actual()).getEstrategia = estrategia;
 				IteradorDeColeccion.siguiente();
 			}	
-		}		
+		}
+		public static void jornadaDeVentas (Coleccionable<Comparable> vendedores) {
+			for (int i = 0; i < 20; i++) {
+				Gerente.ventas(vendedores);
+			}
+		}
 	}
 }

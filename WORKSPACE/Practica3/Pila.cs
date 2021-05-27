@@ -22,7 +22,7 @@ namespace Practica3 {
 		public Pila() {
 			elementos = new List<Comparable>();  
 		}
-				
+	
 		//Iterable
 		public Iterador crearIterador() {
 			return new IteradorDePila(this);

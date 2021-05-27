@@ -15,6 +15,18 @@ namespace Practica3 {
 		
 		protected string nombre;
 		protected int dni;
+		protected EstrategiaDeComparacion estrategia = new PorDni();
+		
+		public EstrategiaDeComparacion getEstrategia {
+			get { return estrategia;}
+			set { estrategia = value;}
+		}	
+
+		public Persona(string nombre, int dni, EstrategiaDeComparacion estrategia) {
+			this.nombre = nombre;
+			this.dni = dni;
+			this.estrategia = estrategia;
+		}
 		
 		public Persona(string nombre, int dni) {
 			this.nombre = nombre;
@@ -35,41 +47,19 @@ namespace Practica3 {
 		public int getDni {
 			get { return dni;}
 			set { dni = value;}
-		}
-		
-		public virtual bool sosIgual(Comparable objeto) { //por nombre o dni
-			bool igual = false;
-			if ((nombre == ((Persona)objeto).getNombre ) || (dni == ((Persona)objeto).getDni)){
-				igual = true;
-			}
-			return igual;
 		}		
-		public virtual bool sosMenor(Comparable objeto) {
-			bool menor = false;
-			if (dni < ((Persona)objeto).getDni) {
-				menor = true;
-			}
-			return menor;
-		}
-		public virtual bool sosMayor(Comparable objeto) {
-			bool mayor = false;
-			if (dni > ((Persona)objeto).getDni) {
-				mayor = true;
-			}
-			return mayor;
-		}
 		
-		public virtual void compararPorConsola (Coleccionable<Comparable> coleccionable) { 
-			Console.Write("Ingrese DNI >> ");
-			int a = int.Parse(Console.ReadLine());			
-			if (coleccionable.contiene(new Persona(a))) {
-				Console.WriteLine("El DNI N{0} pertenece a la {1}",a,coleccionable.ToString());
-				Console.WriteLine("--------FIN-INFORME--------\n");
-				return;
-			}
-			Console.WriteLine("El DNI N{0} NO pertenece a la {1}",a,coleccionable.ToString());
-			Console.WriteLine("--------FIN-INFORME--------\n");	
+		public virtual bool sosIgual(Comparable objeto) { 
+			return estrategia.sosIgual(objeto, this); 
 		}
+
+		public virtual bool sosMenor(Comparable objeto) { 
+			return estrategia.sosMenor(objeto, this);
+		}
+
+		public virtual bool sosMayor(Comparable objeto) { 
+			return estrategia.sosMayor(objeto, this);
+		}		
 		
 		public override string ToString() {
 			return string.Format(">> Persona Nombre = {0}	DNI = {1}", nombre, dni);

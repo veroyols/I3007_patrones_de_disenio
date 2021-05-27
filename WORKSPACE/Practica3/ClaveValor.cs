@@ -14,6 +14,12 @@ namespace Practica3 {
 		public static int contador = 0; //clave unica por defecto
 		private Comparable clave; //id
 		private Object valor;
+		private EstrategiaDeComparacion estrategia = new PorDni();
+		
+		public EstrategiaDeComparacion getEstrategia {
+			get { return estrategia;}
+			set { estrategia = value;}
+		}	
 		
 		public Comparable getClave {
 			set {clave = value;}
@@ -38,23 +44,20 @@ namespace Practica3 {
 
 		//IComparable
 		public bool sosIgual(Comparable objeto) {	
-			return false;
+			return estrategia.sosIgual(objeto, this); 
 		}
 		
 		public bool sosMenor(Comparable objeto) {
-			return false;
+			return estrategia.sosMenor(objeto, this); 
 		}
 		
 		public bool sosMayor(Comparable objeto) {
-			return false;
+			return estrategia.sosMayor(objeto, this); 
 		}
 		
-		public void compararPorConsola (Coleccionable<Comparable> coleccionable) {
-			return;
-		}
-		
+
 		public override string ToString() {
-			return string.Format("Valor={0}", valor);
+			return string.Format("{0}) Valor={1}",clave,valor);
 		}
 	}
 }

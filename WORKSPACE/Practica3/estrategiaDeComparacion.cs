@@ -18,16 +18,22 @@ namespace Practica3 {
 	public class PorNombre : EstrategiaDeComparacion {
 		public bool sosIgual(Comparable objeto, Comparable objeto2) { 
 			bool igual = false;
-			if (((Alumno)objeto).getNombre == ((Alumno)objeto2).getNombre)
+			if (((Persona)objeto).getNombre == ((Persona)objeto2).getNombre)
 				igual = true;
 			return igual;
 		}
 		public bool sosMayor(Comparable objeto, Comparable objeto2) { 
-			return false;
-		} //false
+			bool mayor = false;
+			if (((Persona)objeto).getNombre.CompareTo( ((Persona)objeto2).getNombre )<0)
+				mayor = true;
+			return mayor;
+		}
 		public bool sosMenor(Comparable objeto, Comparable objeto2) { 
-			return false;
-		} //false
+			bool mayor = false;
+			if (((Persona)objeto).getNombre.CompareTo( ((Persona)objeto2).getNombre )>0)
+				mayor = true;
+			return mayor;
+		}
 		public override string ToString() {
 			return "Nombre";
 		}
@@ -36,19 +42,19 @@ namespace Practica3 {
 	public class PorDni : EstrategiaDeComparacion {
 		public bool sosIgual(Comparable objeto, Comparable objeto2) { 
 			bool igual = false;
-			if (((Alumno)objeto).getDni == ((Alumno)objeto2).getDni)
+			if (((Persona)objeto).getDni == ((Persona)objeto2).getDni)
 				igual = true;
 			return igual;
 		} 
 		public bool sosMayor(Comparable objeto, Comparable objeto2) { //obj,this
 			bool mayor = false;
-			if (((Alumno)objeto).getDni < ((Alumno)objeto2).getDni)
+			if (((Persona)objeto).getDni < ((Persona)objeto2).getDni)
 				mayor = true;
 			return mayor;
 		}//O2 es mayor que O1
 		public bool sosMenor(Comparable objeto, Comparable objeto2) { 
 			bool menor = false;
-			if (((Alumno)objeto).getDni > ((Alumno)objeto2).getDni)
+			if (((Persona)objeto).getDni > ((Persona)objeto2).getDni)
 				menor = true;
 			return menor;
 		}
@@ -104,4 +110,28 @@ namespace Practica3 {
 			return "Promedio";
 		}
 	}
+	
+	public class PorBonus : EstrategiaDeComparacion {	
+		public bool sosIgual(Comparable objeto, Comparable objeto2) { 
+			bool igual = false;
+			if (((Vendedor)objeto).getBonus == ((Vendedor)objeto2).getBonus)
+				igual = true;
+			return igual;
+		}
+		public bool sosMayor(Comparable objeto, Comparable objeto2) { //O2 es mayor que O1
+			bool mayor = false;
+			if (((Vendedor)objeto).getBonus < ((Vendedor)objeto2).getBonus)
+				mayor = true;
+			return mayor;
+		}
+		public bool sosMenor(Comparable objeto, Comparable objeto2) { //O2 es menor que O1
+			bool menor = false;
+			if (((Vendedor)objeto).getBonus > ((Vendedor)objeto2).getBonus)
+				menor = true;
+			return menor;
+		}
+		public override string ToString() {
+			return "Bonus";
+		}
+	}	
 }

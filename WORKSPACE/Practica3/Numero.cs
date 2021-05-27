@@ -48,18 +48,6 @@ namespace Practica3 {
 			return mayor;
 		}
 
-		public void compararPorConsola (Coleccionable<Comparable> coleccionable) { //EJERCICIO6
-			Console.Write("Ingrese un Valor >> ");
-			int a = int.Parse(Console.ReadLine());
-			if (coleccionable.contiene(new Numero(a) )) {
-				Console.WriteLine("El elemento {0} pertenece a la {1}",a,coleccionable.ToString());
-				Console.WriteLine("--------FIN-INFORME--------\n");
-				return;
-			}
-			Console.WriteLine("El elemento {0} NO pertenece a la {1}.",a,coleccionable.ToString());
-			Console.WriteLine("--------FIN-INFORME--------\n");	
-		}
-		
 		public override string ToString() {
 			return string.Format(">> Numero = {0}", valor);
 		}	

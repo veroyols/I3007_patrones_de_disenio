@@ -14,29 +14,34 @@ namespace Practica3 {
 		protected GeneradorDeDatosAleatorio generador = new GeneradorDeDatosAleatorio();
 		public const int ALUMNO = 1;
 		public const int NUMERO = 2;
+		public const int VENDEDOR = 3;
 			
 		public static Comparable crearAleatorio (int queComparable){
-			FabricaDeComparables fabrica = null;
-		
+			FabricaDeComparables fabrica = null;		
 			switch(queComparable){
 				case ALUMNO: 
 			        fabrica = new FabricaDeAlumno();
 			        break;
 			    case NUMERO:
 			        fabrica = new FabricaDeNumero();
+			        break;
+			    case VENDEDOR:
+			        fabrica = new FabricaDeVendedor();
 			        break;
 			}
 		return fabrica.crearComparableAleatorio();
 		}
 		public static Comparable crearPorTeclado (int queComparable){
 			FabricaDeComparables fabrica = null;
-		
 			switch(queComparable){
 				case ALUMNO: 
 			        fabrica = new FabricaDeAlumno();
 			        break;
 			    case NUMERO:
 			        fabrica = new FabricaDeNumero();
+			        break;
+			    case VENDEDOR:
+			        fabrica = new FabricaDeVendedor();
 			        break;
 			}
 		return fabrica.crearComparablePorTeclado();
@@ -78,6 +83,25 @@ namespace Practica3 {
 			return new Numero(int.Parse(Console.ReadLine()));
 		}
 	}
+	
+	public class FabricaDeVendedor: FabricaDeComparables{ //Ver la jerarquia de fabrica alumno vendedor
+		public override Comparable crearComparableAleatorio(){
+			string nombre = generador.stringAleatorio(4);
+			int dni = generador.numeroAleatorio(99999999);
+			int sueldo = generador.numeroAleatorio(1000);
+			//estrategia por defecto en Bonus
+			return new Vendedor(nombre,dni,sueldo);		}
+		public override Comparable crearComparablePorTeclado(){
+			Console.Write("Ingrese nombre: ");
+			string nombre = Console.ReadLine();
+			Console.Write("Ingrese dni: ");
+			int dni = int.Parse(Console.ReadLine());
+			Console.Write("Ingrese sueldo $");
+			int sueldo = int.Parse(Console.ReadLine());
+			//estrategia por defecto en Bonus
+			return new Vendedor(nombre,dni,sueldo);
+		}
+	}//E9	
 }
 	
 	
