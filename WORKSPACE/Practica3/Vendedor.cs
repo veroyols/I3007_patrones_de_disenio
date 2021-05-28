@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Practica3 {
 	
-	public class Vendedor : Persona { 
+	public class Vendedor : Persona, Observado { 
 		
 		private int sueldoBasico;
 		private double bonus;
@@ -31,13 +31,20 @@ namespace Practica3 {
 			this.bonus = 1;
 			this.estrategia = new PorBonus();
 		}
-		
-//		public void actualizar(this) {
-//			return;
-//		}		
+		//observer
+		public List<Observador> observadores = new List<Observador>();		
+		public void agregarObservador(Observador observador){
+			observadores.Add(observador);
+		}
+		public void notificar(int monto) {
+			foreach (Observador o in observadores) {
+				o.actualizar(this, monto);
+			} 
+		}		
 		
 		public void venta (int monto) {
 			Console.WriteLine("Ha vendido ${0}",monto);
+			this.notificar(monto);
 		}
 		
 		public void aumentaBonus () {

@@ -9,13 +9,13 @@ using System;
 
 namespace Practica3 {
 	
-	public interface Observador {
-		void quitarObservado(Observado observado);
-		void agregarObservado(Observado observado);
-		void notificar(); //jornada de ventas
+	public interface Observador { 
+		void actualizar(Observado observado, int monto); //ventas 
 	} //gerente
 
-	public interface Observado {
-		void actualizar(Observado observado); //ventas 
+	public interface Observado { 
+		void agregarObservador(Observador observador);
+		void notificar(int monto); //jornada de ventas
+		//list
 	} //vendedor	
 }

@@ -38,7 +38,7 @@ namespace Practica3 {
 		}
 
 		public bool contiene(Comparable objeto) { 
-			return conjunto.contiene(objeto);
+			return conjunto.contiene(objeto);//TODO
 		}	
 		
 		public Comparable minimo() { 

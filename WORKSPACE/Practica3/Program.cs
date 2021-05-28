@@ -13,14 +13,18 @@ namespace Practica3 {
 		
 		public static void Main(string[] args) {
 							
-//			Informe.informar(diccionario, queComparable);//diccionario.contiene(comparable) devuelve false		
-	
 			Coleccionable<Comparable> coleccion = new Pila();
 			int opción_para_crear_vendedores = 3;
 			llenar(coleccion, opción_para_crear_vendedores);
+			
 			Gerente gerente = new Gerente();
+			Iterador iteradorDeColeccion = coleccion.crearIterador();
 			//hacer que gerente sea observador de todos los vendedores
-			//gerente.agregarObservado(vendedor);
+			while(!iteradorDeColeccion.fin()){
+				((Vendedor)iteradorDeColeccion.actual()).agregarObservador(gerente);
+				iteradorDeColeccion.siguiente();
+			}			
+			
 			jornadaDeVentas(coleccion);
 			gerente.cerrar();
 			imprimirElementos(gerente.getMejores);
@@ -36,8 +40,6 @@ namespace Practica3 {
 				iteradorDeColeccion.siguiente();			
 			}
 		}//E7
-		
-		
 		public static void imprimirElementos (Coleccionable<Comparable> coleccionable) {
 			Console.WriteLine("------------------------"); 		
 			Console.WriteLine("---Imprimir Elementos---");
@@ -48,7 +50,6 @@ namespace Practica3 {
 				IteradorDeColeccion.siguiente();
 			}
 		}
-		
 		public static void imprimirMejorPromedio (Coleccionable<Comparable> coleccionable) {
 			cambiarEstrategia(coleccionable, new PorPromedio());
 			Console.WriteLine("-----------------------"); 
@@ -69,10 +70,17 @@ namespace Practica3 {
 				IteradorDeColeccion.siguiente();
 			}	
 		}
+		
 		public static void jornadaDeVentas (Coleccionable<Comparable> vendedores) {
 			for (int i = 0; i < 20; i++) {
-				Gerente.ventas(vendedores);
+				Iterador iteradorDeColeccion = vendedores.crearIterador();
+				GeneradorDeDatosAleatorio generador = new GeneradorDeDatosAleatorio();
+				while(!iteradorDeColeccion.fin()){
+					int monto = generador.numeroAleatorio(6999);
+					((Vendedor)iteradorDeColeccion.actual()).venta(monto+1);
+					iteradorDeColeccion.siguiente();
+				}
 			}
-		}
+		}		
 	}
 }
