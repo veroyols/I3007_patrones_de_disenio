@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Observer", "_Observer\_Obs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica3", "Practica3\Practica3.csproj", "{3AD1EF09-8C2E-4175-9024-EAD14F968E69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica4", "Practica4\Practica4.csproj", "{C6530A6C-9167-4DFA-8FBD-57D20913354F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,5 +58,9 @@ Global
 		{3AD1EF09-8C2E-4175-9024-EAD14F968E69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3AD1EF09-8C2E-4175-9024-EAD14F968E69}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3AD1EF09-8C2E-4175-9024-EAD14F968E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6530A6C-9167-4DFA-8FBD-57D20913354F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6530A6C-9167-4DFA-8FBD-57D20913354F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6530A6C-9167-4DFA-8FBD-57D20913354F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6530A6C-9167-4DFA-8FBD-57D20913354F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 EndGlobal
