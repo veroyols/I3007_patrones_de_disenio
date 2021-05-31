@@ -52,7 +52,7 @@ namespace Practica4 {
 		}				
 		
 		public override string ToString() {
-			return string.Format(">> {0} DNI {1} (Sueldo ${2}, Bonus: {3}) - Compara por {4}", getNombre, getDni, sueldoBasico, bonus, estrategia);
+			return string.Format(">> {0} DNI {1} (Sueldo ${2}, Bonus: {3}) - Compara por {4}", getNombre(), getDni, sueldoBasico, bonus, estrategia);
 		}
 	}		
 }

@@ -9,8 +9,14 @@ using System;
 
 namespace Practica4 {
 	
-	public interface IAlumno {
+	public interface IAlumno : Comparable {
 		int responderPregunta(int pregunta);
 		string mostrarCalificacion();
+		int getLegajo();
+		int getCalificacion();
+		void setCalificacion(int calificacion);
+		string getNombre();
+		
+		
 	}	
 }

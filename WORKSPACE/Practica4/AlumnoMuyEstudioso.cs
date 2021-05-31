@@ -11,10 +11,11 @@ namespace Practica4 {
 	
 	public class AlumnoMuyEstudioso : Alumno {
 		
-		public AlumnoMuyEstudioso() {}
+		public AlumnoMuyEstudioso() : base () {
+		}
 		
 		public override int responderPregunta(int pregunta) {
-			return 3;
+			return pregunta % 3;
 		}//E2
 	}
 }

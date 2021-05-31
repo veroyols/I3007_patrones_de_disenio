@@ -51,26 +51,18 @@ namespace Practica4 {
 	}
 	
 	public class FabricaDeAlumno : FabricaDeComparables{
-		public static int legajo = 100;
 		public override Comparable crearComparableAleatorio(){
-			string nombre = generador.stringAleatorio(4);
-			int dni = generador.numeroAleatorio(99999999);
-			legajo++;
-			double promedio = generador.numeroAleatorio(1000) /100.00;
-			//estrategia por defecto en Alumno
-			return new Alumno(nombre,dni,legajo,promedio);
+			return new Alumno();
 		}	
 		public override Comparable crearComparablePorTeclado(){
 			Console.Write("Ingrese nombre: ");
 			string nombre = Console.ReadLine();
 			Console.Write("Ingrese dni: ");
 			int dni = int.Parse(Console.ReadLine());
-			Console.Write("Ingrese legajo: ");
-			int legajo = int.Parse(Console.ReadLine());
 			Console.Write("Ingrese promedio: ");
 			int promedio = int.Parse(Console.ReadLine());
 			//estrategia por defecto en Alumno
-			return new Alumno(nombre,dni,legajo,promedio);
+			return new Alumno(nombre,dni,promedio);
 		}		
 	}
 		

@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
-    <ProjectGuid>{C6530A6C-9167-4DFA-8FBD-57D20913354F}</ProjectGuid>
+    <ProjectGuid>{9902372D-ED4D-4D0D-960E-63373608DC43}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Practica4</RootNamespace>
-    <AssemblyName>Practica4</AssemblyName>
+    <RootNamespace>_Decorator</RootNamespace>
+    <AssemblyName>_Decorator</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -45,33 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdaptadorDeStudents.cs" />
-    <Compile Include="Alumno.cs" />
-    <Compile Include="AlumnoMuyEstudioso.cs" />
-    <Compile Include="ClaveValor.cs" />
-    <Compile Include="Cola.cs" />
-    <Compile Include="Coleccionable.cs" />
-    <Compile Include="ColeccionMultiple.cs" />
-    <Compile Include="Comparable.cs" />
-    <Compile Include="Conjunto.cs" />
-    <Compile Include="Decorator.cs" />
-    <Compile Include="Diccionario.cs" />
-    <Compile Include="EstrategiaDeComparacion.cs" />
-    <Compile Include="FabricaDeComparables.cs" />
-    <Compile Include="GeneradorDeDatosAleatorio.cs" />
-    <Compile Include="Gerente.cs" />
-    <Compile Include="IAlumno.cs" />
-    <Compile Include="Informe.cs" />
-    <Compile Include="Iteradores.cs" />
-    <Compile Include="LectorDeDatos.cs" />
-    <Compile Include="MDPI.cs" />
-    <Compile Include="Numero.cs" />
-    <Compile Include="Observer.cs" />
-    <Compile Include="Persona.cs" />
-    <Compile Include="Pila.cs" />
+    <Compile Include="Decorados.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vendedor.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

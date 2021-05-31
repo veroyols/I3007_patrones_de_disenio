@@ -2,3 +2,4 @@ C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica4\bin\Debug\Practica4.ex
 C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica4\bin\Debug\Practica4.pdb
 C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica4\obj\Debug\Practica4.exe
 C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica4\obj\Debug\Practica4.pdb
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica4\obj\Debug\Practica4.csprojResolveAssemblyReference.cache

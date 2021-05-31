@@ -14,23 +14,45 @@ namespace Practica4 {
 		bool sosMayor(Comparable objeto, Comparable objeto2);
 		bool sosMenor(Comparable objeto, Comparable objeto2);
 	}
-	
+	public class PorCalificacion : EstrategiaDeComparacion {	
+		public bool sosIgual(Comparable objeto, Comparable objeto2) { 
+			bool igual = false;
+			if (((Alumno)objeto).getCalificacion() == ((Alumno)objeto2).getCalificacion())
+				igual = true;
+			return igual;
+		}
+		public bool sosMayor(Comparable objeto, Comparable objeto2) { //O2 es mayor que O1
+			bool mayor = false;
+			if (((Alumno)objeto).getCalificacion() < ((Alumno)objeto2).getCalificacion())
+				mayor = true;
+			return mayor;
+		}
+		public bool sosMenor(Comparable objeto, Comparable objeto2) { //O2 es menor que O1
+			bool menor = false;
+			if (((Alumno)objeto).getCalificacion() > ((Alumno)objeto2).getCalificacion())
+				menor = true;
+			return menor;
+		}
+		public override string ToString() {
+			return "Calificacion";
+		}
+	}	
 	public class PorNombre : EstrategiaDeComparacion {
 		public bool sosIgual(Comparable objeto, Comparable objeto2) { 
 			bool igual = false;
-			if (((Persona)objeto).getNombre == ((Persona)objeto2).getNombre)
+			if (((Persona)objeto).getNombre() == ((Persona)objeto2).getNombre())
 				igual = true;
 			return igual;
 		}
 		public bool sosMayor(Comparable objeto, Comparable objeto2) { 
 			bool mayor = false;
-			if (((Persona)objeto).getNombre.CompareTo( ((Persona)objeto2).getNombre )<0)
+			if (((Persona)objeto).getNombre().CompareTo( ((Persona)objeto2).getNombre() )<0)
 				mayor = true;
 			return mayor;
 		}
 		public bool sosMenor(Comparable objeto, Comparable objeto2) { 
 			bool mayor = false;
-			if (((Persona)objeto).getNombre.CompareTo( ((Persona)objeto2).getNombre )>0)
+			if (((Persona)objeto).getNombre().CompareTo( ((Persona)objeto2).getNombre() )>0)
 				mayor = true;
 			return mayor;
 		}
@@ -66,19 +88,19 @@ namespace Practica4 {
 	public class PorLegajo : EstrategiaDeComparacion {
 		public bool sosIgual(Comparable objeto, Comparable objeto2) { 
 			bool igual = false;
-			if (((Alumno)objeto).getLegajo == ((Alumno)objeto2).getLegajo)
+			if (((Alumno)objeto).getLegajo() == ((Alumno)objeto2).getLegajo())
 				igual = true;
 			return igual;
 		}
 		public bool sosMayor(Comparable objeto, Comparable objeto2) { //O2 es mayor que O1
 			bool mayor = false;
-			if (((Alumno)objeto).getLegajo < ((Alumno)objeto2).getLegajo)
+			if (((Alumno)objeto).getLegajo() < ((Alumno)objeto2).getLegajo())
 				mayor = true;
 			return mayor;
 		}
 		public bool sosMenor(Comparable objeto, Comparable objeto2) { //O2 es menor que O1
 			bool menor = false;
-			if (((Alumno)objeto).getLegajo > ((Alumno)objeto2).getLegajo)
+			if (((Alumno)objeto).getLegajo() > ((Alumno)objeto2).getLegajo())
 				menor = true;
 			return menor;
 		}

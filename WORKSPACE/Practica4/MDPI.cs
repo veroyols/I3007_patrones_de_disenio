@@ -19,9 +19,10 @@ namespace Practica4
 		int yourAnswerIs(int question);
 		void setScore(int score);
 		string showResult();
-		bool equals(Student student);
+		bool equals(Student student); 
 		bool lessThan(Student student);
 		bool greaterThan(Student student);
+		int getScore(); //no pedido
 	}
 	
 	public interface Collection

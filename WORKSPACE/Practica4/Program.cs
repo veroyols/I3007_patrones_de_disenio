@@ -13,27 +13,44 @@ namespace Practica4 {
 		
 		public static void Main(string[] args) {
 			
-			Console.WriteLine("Hello World!");
-			
-			Alumno alumno = new Alumno("Maria", 11111111,1000,9);
-			Console.WriteLine(alumno.mostrarCalificacion());
-			Console.WriteLine(alumno.getEstrategia );
-			
-			for (int i = 0; i < 20; i++) {
-				Console.WriteLine(alumno.responderPregunta(2));
-			}
-			
+			/* E4: Teacher x20 goToClass.*/
 			Teacher teacher = new Teacher ();
-//			teacher.goToClass(student);
+			for (int i = 0; i < 10; i++) {
+				IAlumno decorado = new AlumnoMuyEstudioso();
+				decorado = new DecoradoConLegajo(decorado);
+//				decorado = new DecoradoConLetras (decorado);
+//				decorado = new DecoradoConDescripcion (decorado);
+//				decorado = new DecoradoConPosicion(decorado,i);
+				decorado = new DecoradoConAsteriscos (decorado);
+				Console.WriteLine(decorado.mostrarCalificacion());
+				teacher.goToClass(new AdaptadorDeStudent(decorado)); //por calificacion
+			}
+			teacher.teachingAClass();
+			//E6
+//			Console.WriteLine("IAlumno para decorar: ");
+//			IAlumno decorado = new Alumno("Raton Perez",6);
+//			decorado = new DecoradoConLegajo(decorado);
+//			decorado = new DecoradoConLetras (decorado);
+//			decorado = new DecoradoConDescripcion (decorado);
+//			decorado = new DecoradoConPosicion(decorado,5);
+//			decorado = new DecoradoConAsteriscos (decorado);
+//			Console.WriteLine(decorado.mostrarCalificacion());	
+//
+//			Student student = new AdaptadorDeStudent(decorado);
 			
-			AdaptadorDeStudent adaptadorStudent = new AdaptadorDeStudent ();
+//			Coleccionable<Comparable> coleccion = new Pila();
+//			llenar(coleccion,1);
+//			Iterador iterador = coleccion.crearIterador();
+//			while(!iterador.fin()){
+//				AdaptadorDeStudent student = new AdaptadorDeStudent ((Alumno)iterador.actual());
+//				iterador.siguiente();
+//			}	
+//			teacher.setStudents(coleccion);
 
-						
 			Console.WriteLine("...");
 			Console.ReadKey(true);
 		}
 		
-
 		public static void llenar(Coleccionable<Comparable> coleccion, int queComparable){ 
 			Iterador iteradorDeColeccion = coleccion.crearIterador();
 			for (int i = 0; i < 20; i++) { //E6
@@ -58,7 +75,7 @@ namespace Practica4 {
 			Iterador IteradorDeColeccion = coleccionable.crearIterador();
 			Console.WriteLine("Imprimir {0} ",coleccionable);
 			while(!IteradorDeColeccion.fin()){
-				if (((Alumno)IteradorDeColeccion.actual()).sosMayor(new Alumno("",0,0,7 ) ) ) {
+				if (((Alumno)IteradorDeColeccion.actual()).sosMayor(new Alumno("",0,7 ) ) ) {
 					Console.WriteLine(IteradorDeColeccion.actual());
 				}
 				IteradorDeColeccion.siguiente();
@@ -71,7 +88,6 @@ namespace Practica4 {
 				IteradorDeColeccion.siguiente();
 			}	
 		}
-		
 		public static void jornadaDeVentas (Coleccionable<Comparable> vendedores) {
 			for (int i = 0; i < 20; i++) {
 				Iterador iteradorDeColeccion = vendedores.crearIterador();
@@ -83,6 +99,5 @@ namespace Practica4 {
 				}
 			}
 		}		
-		
 	}
 }

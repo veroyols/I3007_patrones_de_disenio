@@ -15,19 +15,28 @@ namespace Practica4 {
 		
 		protected string nombre;
 		protected int dni;
-		protected EstrategiaDeComparacion estrategia = new PorDni();
-		
+		protected EstrategiaDeComparacion estrategia;
+		private GeneradorDeDatosAleatorio generador = new GeneradorDeDatosAleatorio();
+		public GeneradorDeDatosAleatorio getGenerador {
+			get { return generador;}
+			set { generador = value;}
+		} 		
 		public EstrategiaDeComparacion getEstrategia {
 			get { return estrategia;}
 			set { estrategia = value;}
 		}	
-
+		public string setNombre {
+			set { nombre = value;}
+		}
+		public int getDni {
+			get { return dni;}
+			set { dni = value;}
+		}
 		public Persona(string nombre, int dni, EstrategiaDeComparacion estrategia) {
 			this.nombre = nombre;
 			this.dni = dni;
 			this.estrategia = estrategia;
-		}
-		
+		}	
 		public Persona(string nombre, int dni) {
 			this.nombre = nombre;
 			this.dni = dni;
@@ -36,18 +45,17 @@ namespace Practica4 {
 		public Persona(int dni) {
 			this.dni = dni;
 		}
-		
-		public Persona() { }		
-		
-		public string getNombre {
-			get { return nombre;}
-			set { nombre = value;}
+		public Persona(string nombre) {
+			this.nombre = nombre;
+		}		
+		public Persona() {
+			this.nombre = generador.stringAleatorio(5);
+			this.dni = generador.numeroAleatorio(55555555);
 		}
 		
-		public int getDni {
-			get { return dni;}
-			set { dni = value;}
-		}		
+		public string getNombre() {
+			return this.nombre;
+		}
 		
 		public virtual bool sosIgual(Comparable objeto) { 
 			return estrategia.sosIgual(objeto, this); 

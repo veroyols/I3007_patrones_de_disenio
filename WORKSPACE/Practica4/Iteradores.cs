@@ -23,7 +23,7 @@ namespace Practica4 {
 		bool fin();
 		Comparable actual (); 
 	}
-	
+
 	public class IteradorDePila : Iterador {
 		private Pila pila; 
 		private int indice;
