@@ -54,7 +54,7 @@
     <Compile Include="ColeccionMultiple.cs" />
     <Compile Include="Comparable.cs" />
     <Compile Include="Conjunto.cs" />
-    <Compile Include="Decorator.cs" />
+    <Compile Include="_Decorator.cs" />
     <Compile Include="Diccionario.cs" />
     <Compile Include="EstrategiaDeComparacion.cs" />
     <Compile Include="FabricaDeComparables.cs" />

@@ -107,7 +107,7 @@ namespace Practica4
 	
 	public class Teacher
 	{
-		private Collection students;
+		public Collection students;//private
 			
 		public Teacher()
 		{

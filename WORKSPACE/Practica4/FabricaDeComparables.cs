@@ -65,6 +65,9 @@ namespace Practica4 {
 			return new Alumno(nombre,dni,promedio);
 		}		
 	}
+	
+	
+	
 		
 	public class FabricaDeNumero: FabricaDeComparables{
 		public override Comparable crearComparableAleatorio(){
@@ -76,7 +79,7 @@ namespace Practica4 {
 		}
 	}
 	
-	public class FabricaDeVendedor: FabricaDeComparables{ //Ver la jerarquia de fabrica alumno vendedor
+	public class FabricaDeVendedor: FabricaDeComparables{ 
 		public override Comparable crearComparableAleatorio(){
 			string nombre = generador.stringAleatorio(4);
 			int dni = generador.numeroAleatorio(99999999);

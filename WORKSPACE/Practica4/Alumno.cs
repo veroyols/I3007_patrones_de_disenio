@@ -10,8 +10,8 @@ using System;
 namespace Practica4 {
 	
 	public class Alumno : Persona, IAlumno { 
-		
-		private int legajo = 100;
+		private static int num = 100;
+		private int legajo;
 		private double promedio;
 		private int calificacion;
 
@@ -19,18 +19,23 @@ namespace Practica4 {
 			get { return promedio;}
 			set { promedio = value;}
 		}	
+	
 		public Alumno() : base () { // aleatorios para ejercicio 4
 			this.estrategia = new PorCalificacion();
 			this.promedio = (base.getGenerador.numeroAleatorio(1000))/100.00;
-			legajo++;
+			this.legajo = num;
+			num++;
 		}
 		public Alumno(string n , int d, double p) : base (n,d) {
-			legajo++;
 			this.promedio = p;
+			this.legajo = num;
+			num++;
 		}
 		public Alumno(string nombre , int calificacion) : base (nombre) {
 			this.calificacion = calificacion;
 			this.estrategia = new PorNombre();
+			this.legajo = num;
+			num++;
 		} // para E3
 		
 		public virtual int responderPregunta(int pregunta) {

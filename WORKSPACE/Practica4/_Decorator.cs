@@ -105,15 +105,54 @@ namespace Practica4 {
 		public override string mostrarCalificacion() {
 			int nota = decorador.getCalificacion();
 			string descripcion;
-			if (nota >= 7) {
-				descripcion = " (PROMOCIONA)";
-			}
-			if (nota >= 4 && nota < 7) {
-				descripcion = " (APROBADO)";
-			}
-			else {
-				descripcion = " (DESAPROBADO)";
-			}
+			switch (nota) {
+				case 0:
+					descripcion = "(DESAPROBADO)";
+					break;
+				case 1:
+					descripcion = "(DESAPROBADO)";
+					break;
+				case 2:
+					descripcion = "(DESAPROBADO)";
+					break;
+				case 3:
+					descripcion = "(DESAPROBADO)";
+					break;
+				case 4:
+					descripcion = "(APROBADO)";
+					break;
+				case 5:
+					descripcion = "(APROBADO)";
+					break;
+				case 6:
+					descripcion = "(APROBADO)";
+					break;
+				case 7:
+					descripcion = "(PROMOCIONA)";
+					break;
+				case 8:
+					descripcion = "(PROMOCIONA)";
+					break;
+				case 9:
+					descripcion = "(PROMOCIONA)";
+					break;
+				case 10:
+					descripcion = "(PROMOCIONA)";
+					break;
+				default:
+					descripcion = "(desconocido)";
+					break;
+			}			
+			
+//			if (nota > 6) {
+//				descripcion = " (PROMOCIONA)";
+//			}
+//			if (nota < 4) {
+//				descripcion = " (DESAPROBADO)";
+//			}
+//			else {
+//				descripcion = " (APROBADO)";
+//			}
 			
 			return decorador.mostrarCalificacion()+descripcion;
 		}

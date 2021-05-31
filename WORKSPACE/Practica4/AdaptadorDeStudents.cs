@@ -33,6 +33,16 @@ namespace Practica4 {
 		public string showResult() {
 			return iAlumno.mostrarCalificacion();
 		}		
+//		public bool sosIgual(Comparable objeto) {
+//			return this.iAlumno.sosIgual(objeto);
+//		}
+//		public bool sosMenor(Comparable objeto) {
+//			return this.iAlumno.sosMenor(objeto);
+//		}
+//		public bool sosMayor(Comparable objeto) {
+//			return this.iAlumno.sosMayor(objeto);
+//		}
+	
 		public bool equals(Student student) {
 			IAlumno alumno2 = new Alumno (student.getName(),student.getScore());
 			return this.iAlumno.sosIgual(alumno2);

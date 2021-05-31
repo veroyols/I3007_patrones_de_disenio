@@ -16,7 +16,5 @@ namespace Practica4 {
 		int getCalificacion();
 		void setCalificacion(int calificacion);
 		string getNombre();
-		
-		
 	}	
 }

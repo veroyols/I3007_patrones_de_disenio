@@ -15,37 +15,29 @@ namespace Practica4 {
 			
 			/* E4: Teacher x20 goToClass.*/
 			Teacher teacher = new Teacher ();
+
+			for (int i = 0; i < 10; i++) {
+				IAlumno decorado = new Alumno();
+				decorado = new DecoradoConLegajo(decorado);
+				decorado = new DecoradoConLetras (decorado);
+				decorado = new DecoradoConDescripcion (decorado);
+				decorado = new DecoradoConPosicion(decorado,i);
+				decorado = new DecoradoConAsteriscos (decorado);
+				teacher.goToClass(new AdaptadorDeStudent(decorado)); 
+			}
+			
 			for (int i = 0; i < 10; i++) {
 				IAlumno decorado = new AlumnoMuyEstudioso();
 				decorado = new DecoradoConLegajo(decorado);
-//				decorado = new DecoradoConLetras (decorado);
-//				decorado = new DecoradoConDescripcion (decorado);
-//				decorado = new DecoradoConPosicion(decorado,i);
+				decorado = new DecoradoConLetras (decorado);
+				decorado = new DecoradoConDescripcion (decorado);
+				decorado = new DecoradoConPosicion(decorado,i+10);
 				decorado = new DecoradoConAsteriscos (decorado);
-				Console.WriteLine(decorado.mostrarCalificacion());
-				teacher.goToClass(new AdaptadorDeStudent(decorado)); //por calificacion
-			}
+				teacher.goToClass(new AdaptadorDeStudent(decorado)); 
+			}			
 			teacher.teachingAClass();
-			//E6
-//			Console.WriteLine("IAlumno para decorar: ");
-//			IAlumno decorado = new Alumno("Raton Perez",6);
-//			decorado = new DecoradoConLegajo(decorado);
-//			decorado = new DecoradoConLetras (decorado);
-//			decorado = new DecoradoConDescripcion (decorado);
-//			decorado = new DecoradoConPosicion(decorado,5);
-//			decorado = new DecoradoConAsteriscos (decorado);
-//			Console.WriteLine(decorado.mostrarCalificacion());	
-//
-//			Student student = new AdaptadorDeStudent(decorado);
 			
-//			Coleccionable<Comparable> coleccion = new Pila();
-//			llenar(coleccion,1);
-//			Iterador iterador = coleccion.crearIterador();
-//			while(!iterador.fin()){
-//				AdaptadorDeStudent student = new AdaptadorDeStudent ((Alumno)iterador.actual());
-//				iterador.siguiente();
-//			}	
-//			teacher.setStudents(coleccion);
+			//E6
 
 			Console.WriteLine("...");
 			Console.ReadKey(true);

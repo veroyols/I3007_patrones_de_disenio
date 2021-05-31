@@ -11,8 +11,7 @@ namespace Practica4 {
 	
 	public class AlumnoMuyEstudioso : Alumno {
 		
-		public AlumnoMuyEstudioso() : base () {
-		}
+		public AlumnoMuyEstudioso() : base () {}
 		
 		public override int responderPregunta(int pregunta) {
 			return pregunta % 3;
