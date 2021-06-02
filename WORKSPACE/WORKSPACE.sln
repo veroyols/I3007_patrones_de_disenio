@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica4", "Practica4\Prac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_Decorator", "_Decorator\_Decorator.csproj", "{9902372D-ED4D-4D0D-960E-63373608DC43}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica5", "Practica5\Practica5.csproj", "{60A1D311-80D9-4B57-8096-EA131ADC5EA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,5 +70,9 @@ Global
 		{9902372D-ED4D-4D0D-960E-63373608DC43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9902372D-ED4D-4D0D-960E-63373608DC43}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9902372D-ED4D-4D0D-960E-63373608DC43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60A1D311-80D9-4B57-8096-EA131ADC5EA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60A1D311-80D9-4B57-8096-EA131ADC5EA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60A1D311-80D9-4B57-8096-EA131ADC5EA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60A1D311-80D9-4B57-8096-EA131ADC5EA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 EndGlobal
