@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-02T23:03:18.466Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="OsgyVWK7HIsZtBjYluPy" version="14.7.3" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-06-02T23:05:20.190Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="cQMIJiuQ_6_32Vw5EhZW" version="14.7.3" type="github" pages="2">
   <diagram id="Y9BkPkcYDif9DkWYkwm6" name="7 Chain of responsability">
     <mxGraphModel dx="1108" dy="1620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -142,7 +142,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="_iobG0fnKCoPinXVhz4o" name="Page-2">
+  <diagram id="_iobG0fnKCoPinXVhz4o" name="7 Singleton">
     <mxGraphModel dx="868" dy="1620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="1rqs09o7rVvM9I3V38z7-0" />
