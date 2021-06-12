@@ -45,8 +45,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdaptadorDeStudents.cs" />
+    <Compile Include="Alumno.cs" />
+    <Compile Include="AlumnoMuyEstudioso.cs" />
+    <Compile Include="ClaveValor.cs" />
+    <Compile Include="Cola.cs" />
+    <Compile Include="Coleccionable.cs" />
+    <Compile Include="ColeccionMultiple.cs" />
+    <Compile Include="Comparable.cs" />
+    <Compile Include="Conjunto.cs" />
+    <Compile Include="Diccionario.cs" />
+    <Compile Include="EstrategiaDeComparacion.cs" />
+    <Compile Include="FabricaDeComparables.cs" />
+    <Compile Include="GeneradorDeDatosAleatorio.cs" />
+    <Compile Include="Gerente.cs" />
+    <Compile Include="IAlumno.cs" />
+    <Compile Include="Informe.cs" />
+    <Compile Include="Iteradores.cs" />
+    <Compile Include="LectorDeDatos.cs" />
+    <Compile Include="MDPI.cs" />
+    <Compile Include="Numero.cs" />
+    <Compile Include="Observer.cs" />
+    <Compile Include="Persona.cs" />
+    <Compile Include="Pila.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vendedor.cs" />
+    <Compile Include="AlumnoProxy.cs" />
+    <Compile Include="_Decorator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -36,28 +36,8 @@ namespace Practica4 {
 				teacher.goToClass(new AdaptadorDeStudent(decorado)); 
 			}			
 			teacher.teachingAClass();
-			
-			//E6
-//			Console.WriteLine("IAlumno para decorar: ");
-//			IAlumno decorado = new Alumno("Raton Perez",6);
-//			decorado = new DecoradoConLegajo(decorado);
-//			decorado = new DecoradoConLetras (decorado);
-//			decorado = new DecoradoConDescripcion (decorado);
-//			decorado = new DecoradoConPosicion(decorado,5);
-//			decorado = new DecoradoConAsteriscos (decorado);
-//			Console.WriteLine(decorado.mostrarCalificacion());	
-//
-//			Student student = new AdaptadorDeStudent(decorado);
-			
-//			Coleccionable<Comparable> coleccion = new Pila();
-//			llenar(coleccion,1);
-//			Iterador iterador = coleccion.crearIterador();
-//			while(!iterador.fin()){
-//				AdaptadorDeStudent student = new AdaptadorDeStudent ((Alumno)iterador.actual());
-//				iterador.siguiente();
-//			}	
-//			teacher.setStudents(coleccion);
-			
+				
+
 			Console.WriteLine("...");
 			Console.ReadKey(true);
 		}

@@ -7,7 +7,7 @@
  */
 using System;
 
-namespace Practica4 {
+namespace Practica5 {
 
 	public class AdaptadorDeStudent : Student { //redirige las peticiones a Alumno
 		private IAlumno iAlumno;
@@ -32,8 +32,7 @@ namespace Practica4 {
 		}
 		public string showResult() {
 			return iAlumno.mostrarCalificacion();
-		}		
-
+		}			
 		public bool equals(Student student) {
 			IAlumno alumno2 = new Alumno (student.getName(),student.getScore());
 			return this.iAlumno.sosIgual(alumno2);
