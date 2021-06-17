@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Practica5 {
 	
-	public class ColeccionMultiple : Coleccionable<Comparable>, Iterable {
+	public class ColeccionMultiple : Coleccion, Coleccionable<Comparable>, Iterable  {  // (abstract class Coleccion : <<Ordenable>>)
 	
 		public Pila pila;
 		public Cola cola;
@@ -52,7 +52,7 @@ namespace Practica5 {
 		}
 		
 		public Comparable maximo() { 
-			if ((pila.cuantos() == 0) & (cola.cuantos() == 0)) {
+			if ((pila.cuantos() == 0) && (cola.cuantos() == 0)) {
 				return null;
 			}
 			if (pila.cuantos() == 0) {
@@ -68,9 +68,23 @@ namespace Practica5 {
 		}
 		
 		public void agregar(Comparable objeto) { 
+			if (pila.Empty() && cola.Empty())
+				orden1.ejecutar();
+			
+			if (pila.cuantos() < 20) {
+				orden2.ejecutar(objeto);
+				pila.Elementos.Add(objeto);	
+			}
+			else {			
+				orden2.ejecutar(objeto);
+				cola.Elementos.Add(objeto);	
+			}
+			
+			if ((pila.cuantos() == 20) && (cola.cuantos() == 20)) {
+				orden3.ejecutar();
+			}
 			return;
-		}//no hace nada
-		
+		}
 		public bool contiene(Comparable objeto) {
 			bool cont = false;
 			if (pila.contiene(objeto) || cola.contiene(objeto) ) {

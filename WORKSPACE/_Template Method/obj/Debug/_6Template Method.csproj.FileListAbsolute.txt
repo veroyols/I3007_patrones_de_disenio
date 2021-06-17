@@ -1,0 +1,4 @@
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Template Method\bin\Debug\_6Template Method.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Template Method\bin\Debug\_6Template Method.pdb
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Template Method\obj\Debug\_6Template Method.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Template Method\obj\Debug\_6Template Method.pdb

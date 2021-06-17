@@ -11,12 +11,13 @@ namespace Practica5 {
 	
 	public class AlumnoProxy : IAlumno, Comparable {
 		
-		private Alumno alumnoReal = null;
+		protected Alumno alumnoReal = null;
 		
-		private string nombre;
-		private int calificacion;		
-		private int legajo;
-		private GeneradorDeDatosAleatorio generador = new GeneradorDeDatosAleatorio();
+		protected string nombre;
+		protected int calificacion;		
+		protected int legajo;
+		protected GeneradorDeDatosAleatorio generador = new GeneradorDeDatosAleatorio();
+		protected EstrategiaDeComparacion estrategia = new PorCalificacion();
 		
 		public AlumnoProxy () {
 			this.nombre = generador.stringAleatorio(4);
@@ -24,13 +25,13 @@ namespace Practica5 {
 			this.legajo = generador.numeroAleatorio(9999);
 		}
 		
-		public int responderPregunta(int pregunta) {
+		public virtual int responderPregunta(int pregunta) {
 				if (alumnoReal != null) {
 					return alumnoReal.responderPregunta(pregunta);	
 			}
 			else {
-				alumnoReal = new Alumno(nombre, legajo, calificacion);
-				Console.WriteLine("crear alumno");
+				alumnoReal = new Alumno(nombre, legajo, calificacion,estrategia);
+				Console.WriteLine("Crear AlumnoProxy");
 				return alumnoReal.responderPregunta(pregunta);
 			}
 		}
@@ -50,7 +51,7 @@ namespace Practica5 {
 		public string getNombre() {
 			return nombre;
 		}
-		public bool sosIgual(Comparable objeto) {
+		public bool sosIgual(Comparable objeto) { 
 			return alumnoReal.sosIgual(objeto);
 		}
 		public bool sosMenor(Comparable objeto) {
@@ -59,6 +60,21 @@ namespace Practica5 {
 		public bool sosMayor(Comparable objeto) {
 			return alumnoReal.sosIgual(objeto);
 		}	
+	}
+	public class AlumnoProxyEstudioso : AlumnoProxy {
+				
+		public AlumnoProxyEstudioso () : base () { }
+		
+		public override int responderPregunta(int pregunta) {	
+				if (alumnoReal != null) {
+					return alumnoReal.responderPregunta(pregunta);	
+			}
+			else {
+				alumnoReal = new AlumnoMuyEstudioso(nombre, legajo, calificacion, estrategia);
+				Console.WriteLine("Crear AlumnoProxyEstudioso");
+				return alumnoReal.responderPregunta(pregunta);
+			}
+		}
 	}
 }
 

@@ -10,7 +10,7 @@ using System.Collections.Generic;
 	
 namespace Practica5 {
 	
-	public class Conjunto :  Coleccionable<Comparable>, Iterable { //lista de elementos sin repeticion
+	public class Conjunto :  Coleccion, Coleccionable<Comparable>, Iterable { // (abstract class Coleccion : <<Ordenable>>)
 		
 		private List<Comparable> elementos;
 	
@@ -36,18 +36,28 @@ namespace Practica5 {
 					return true; 
 			return false;
 		}
+		public bool Empty () {
+			bool vacia = false;
+			if (cuantos() == 0) {
+				vacia = true;
+			}
+			return vacia;
+		}
 
 		//IColeccionable
-		public void agregar (Comparable comparable) { 
+		public void agregar (Comparable comparable) { //sin repeticion
 			if (pertenece(comparable)) {
 				Console.WriteLine("El elemento ya pertenece a la coleccion.");
 				return;
 			}
+			if (Empty()) orden1.ejecutar();
+			orden2.ejecutar(comparable);
 			elementos.Add(comparable);
-			Console.WriteLine("El elemento ha sido agregado a la coleccion. ");
+			if (elementos.Count == 40) orden3.ejecutar();				
+//			Console.WriteLine("El elemento ha sido agregado a la coleccion. ");
 			return;
 		}
-		
+	
 		public int cuantos() {
 			return elementos.Count;
 		}

@@ -14,11 +14,11 @@ namespace Practica5 {
 		public static void Main(string[] args) {
 			
 			Console.WriteLine("Hello World!");
-			/* E4: Teacher x20 goToClass.*/
+			// E2
 			Teacher teacher = new Teacher ();
 
-			for (int i = 0; i < 5; i++) {
-				IAlumno decorado = new AlumnoProxy();
+			for (int i = 0; i < 10; i++) {
+				IAlumno decorado = new Alumno();
 				decorado = new DecoradoConLegajo(decorado);
 				decorado = new DecoradoConLetras (decorado);
 				decorado = new DecoradoConDescripcion (decorado);
@@ -27,7 +27,7 @@ namespace Practica5 {
 				teacher.goToClass(new AdaptadorDeStudent(decorado)); 
 			}
 			
-			for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < 10; i++) {
 				IAlumno decorado = new AlumnoMuyEstudioso();
 				decorado = new DecoradoConLegajo(decorado);
 				decorado = new DecoradoConLetras (decorado);
@@ -35,8 +35,18 @@ namespace Practica5 {
 				decorado = new DecoradoConPosicion(decorado,i+10);
 				decorado = new DecoradoConAsteriscos (decorado);
 				teacher.goToClass(new AdaptadorDeStudent(decorado)); 
-			}			
+			}//TODO no se ordenan por calificacion
 			teacher.teachingAClass();
+			
+			Conjunto conjunto = new Conjunto(); 
+			Aula aula = new Aula();
+			conjunto.setOrdenInicio(new OrdenInicio(aula));
+			conjunto.setOrdenLlegaAlumno(new OrdenLlegaAlumno(aula));
+			conjunto.setOrdenAulaLlena(new OrdenAulaLlena(aula));
+			Diccionario diccionario = new Diccionario(conjunto);
+			llenar(diccionario, 1); //alumno
+			llenar(diccionario, 0); //muy estudioso
+			
 			Console.WriteLine("...");
 			Console.ReadKey(true);
 		}
@@ -45,7 +55,7 @@ namespace Practica5 {
 			Iterador iteradorDeColeccion = coleccion.crearIterador();
 			for (int i = 0; i < 20; i++) { //E6
 				coleccion.agregar(FabricaDeComparables.crearAleatorio(queComparable));
-				iteradorDeColeccion.siguiente();			
+				iteradorDeColeccion.siguiente();		
 			}
 		}//E7
 		public static void imprimirElementos (Coleccionable<Comparable> coleccionable) {

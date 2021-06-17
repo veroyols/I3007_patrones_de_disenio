@@ -19,22 +19,19 @@ namespace Practica5 {
 			get { return promedio;}
 			set { promedio = value;}
 		}	
-	
 		public Alumno() : base () {
 			this.estrategia = new PorCalificacion();
 			this.promedio = (base.getGenerador.numeroAleatorio(1000))/100.00;
 			this.legajo = num;
 			num++;
 		}
-		
-		public Alumno(string nombre, int legajo, int calificacion) : base (nombre) { // proxy
-			this.estrategia = new PorCalificacion();
+		public Alumno(string nombre, int legajo, int calificacion, EstrategiaDeComparacion estrategia) : base (nombre) { // proxy
+			this.estrategia = estrategia;
 			this.promedio = (base.getGenerador.numeroAleatorio(1000))/100.00;
 			this.legajo = legajo;
 			this.calificacion = calificacion;
 			this.nombre = nombre;
 		}
-		
 		public Alumno(string n , int d, double p) : base (n,d) {
 			this.promedio = p;
 			this.legajo = num;
@@ -62,8 +59,19 @@ namespace Practica5 {
 		}
 		public void setCalificacion(int calificacion) {
 			this.calificacion = calificacion;
-		}
+		}		
 		
+		public override bool sosIgual(Comparable objeto) { 
+			return estrategia.sosIgual(objeto, this); 
+		}
+
+		public override bool sosMenor(Comparable objeto) { 
+			return estrategia.sosMenor(objeto, this);
+		}
+
+		public override bool sosMayor(Comparable objeto) { 
+			return estrategia.sosMayor(objeto, this);
+		}
 		
 		public override string ToString() {
 			return string.Format(">> Id{0} {1} DNI {2} (Nota: {3}) - Compara por {4} = {5}", legajo, getNombre(), getDni, promedio, estrategia, calificacion);

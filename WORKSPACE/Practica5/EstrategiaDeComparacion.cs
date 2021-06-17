@@ -14,22 +14,22 @@ namespace Practica5 {
 		bool sosMayor(Comparable objeto, Comparable objeto2);
 		bool sosMenor(Comparable objeto, Comparable objeto2);
 	}
-	public class PorCalificacion : EstrategiaDeComparacion {	
+	public class PorCalificacion : EstrategiaDeComparacion {	//TODO alumno o Ialumno? 
 		public bool sosIgual(Comparable objeto, Comparable objeto2) { 
 			bool igual = false;
-			if (((IAlumno)objeto).getCalificacion() == ((IAlumno)objeto2).getCalificacion())
+			if (((Alumno)objeto).getCalificacion() == ((Alumno)objeto2).getCalificacion())
 				igual = true;
 			return igual;
 		}
 		public bool sosMayor(Comparable objeto, Comparable objeto2) { //O2 es mayor que O1
 			bool mayor = false;
-			if (((IAlumno)objeto).getCalificacion() < ((IAlumno)objeto2).getCalificacion())
+			if (((Alumno)objeto).getCalificacion() < ((Alumno)objeto2).getCalificacion())
 				mayor = true;
 			return mayor;
 		}
 		public bool sosMenor(Comparable objeto, Comparable objeto2) { //O2 es menor que O1
 			bool menor = false;
-			if (((IAlumno)objeto).getCalificacion() > ((IAlumno)objeto2).getCalificacion())
+			if (((Alumno)objeto).getCalificacion() > ((Alumno)objeto2).getCalificacion())
 				menor = true;
 			return menor;
 		}

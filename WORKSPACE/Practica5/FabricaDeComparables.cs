@@ -12,6 +12,7 @@ namespace Practica5 {
 	public abstract class FabricaDeComparables {
 		
 		protected GeneradorDeDatosAleatorio generador = new GeneradorDeDatosAleatorio();
+		public const int ALUMNOESTUDIOSO = 0;
 		public const int ALUMNO = 1;
 		public const int NUMERO = 2;
 		public const int VENDEDOR = 3;
@@ -19,7 +20,10 @@ namespace Practica5 {
 		public static Comparable crearAleatorio (int queComparable){
 			FabricaDeComparables fabrica = null;		
 			switch(queComparable){
-				case ALUMNO: 
+				case ALUMNOESTUDIOSO:
+			        fabrica = new FabricaDeAlumnoEstudioso();
+			        break;
+				case ALUMNO:
 			        fabrica = new FabricaDeAlumno();
 			        break;
 			    case NUMERO:
@@ -50,6 +54,22 @@ namespace Practica5 {
 		public abstract Comparable crearComparablePorTeclado();		
 	}
 	
+	public class FabricaDeAlumnoEstudioso : FabricaDeComparables{
+		public override Comparable crearComparableAleatorio(){
+			return new AlumnoMuyEstudioso();
+		}	
+		public override Comparable crearComparablePorTeclado(){
+			Console.Write("Ingrese nombre: ");
+			string nombre = Console.ReadLine();
+			Console.Write("Ingrese dni: ");
+			int dni = int.Parse(Console.ReadLine());
+			Console.Write("Ingrese promedio: ");
+			int promedio = int.Parse(Console.ReadLine());
+			//estrategia por defecto en Alumno
+			return new AlumnoMuyEstudioso(nombre,dni,promedio);
+		}		
+	}
+	
 	public class FabricaDeAlumno : FabricaDeComparables{
 		public override Comparable crearComparableAleatorio(){
 			return new Alumno();
@@ -65,9 +85,6 @@ namespace Practica5 {
 			return new Alumno(nombre,dni,promedio);
 		}		
 	}
-	
-	
-	
 		
 	public class FabricaDeNumero: FabricaDeComparables{
 		public override Comparable crearComparableAleatorio(){

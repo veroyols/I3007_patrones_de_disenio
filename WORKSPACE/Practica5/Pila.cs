@@ -10,19 +10,36 @@ using System.Collections.Generic;
 
 namespace Practica5 {
 	
-	public class Pila : Coleccionable<Comparable>, Iterable { //LIFO
+	public class Pila : Coleccion, Coleccionable<Comparable>, Iterable { // (abstract class Coleccion : <<Ordenable>>)
 		
 		private List<Comparable> elementos;
-	
-		public List<Comparable> Elementos { //declara propiedad pública
-			set { elementos = value; } //se ejecuta al escribir
-			get { return elementos; } //se ejecuta al leer 
+		
+		public List<Comparable> Elementos { 
+			set { elementos = value; } 
+			get { return elementos; } 
 		}
 	
 		public Pila() {
 			elementos = new List<Comparable>();  
 		}
-	
+			
+		public bool Empty () {
+			bool vacia = false;
+			if (cuantos() == 0) {
+				vacia = true;
+			}
+			return vacia;
+		}
+
+		public void agregar(Comparable objeto) { //Ordenable
+			if (Empty()) orden1.ejecutar();
+				
+			orden2.ejecutar(objeto);
+			elementos.Add(objeto);
+			
+			if (elementos.Count == 40) orden3.ejecutar();				
+		}
+		
 		//Iterable
 		public Iterador crearIterador() {
 			return new IteradorDePila(this);
@@ -32,15 +49,7 @@ namespace Practica5 {
 		public int cuantos() { 
 			return elementos.Count;
 		}
-
-		public bool Empty () {
-			bool vacia = false;
-			if (cuantos() == 0) {
-				vacia = true;
-			}
-			return vacia;
-		}
-				
+			
 		public Comparable minimo() { 
 			if (Empty()) {
 				return null;
@@ -67,11 +76,7 @@ namespace Practica5 {
 			return max; 
 		}		
 	
-		public void agregar(Comparable objeto) {
-			elementos.Add(objeto);	
-		}
-
-		public bool contiene(Comparable objeto) { //verdadero si el parámetro pertenece
+		public bool contiene(Comparable objeto) { 
 			bool cont = false;
 			
 			foreach (Comparable element in elementos) {

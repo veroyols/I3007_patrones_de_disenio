@@ -48,8 +48,10 @@
     <Compile Include="AdaptadorDeStudents.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="AlumnoMuyEstudioso.cs" />
+    <Compile Include="Aula.cs" />
     <Compile Include="ClaveValor.cs" />
     <Compile Include="Cola.cs" />
+    <Compile Include="Coleccion.cs" />
     <Compile Include="Coleccionable.cs" />
     <Compile Include="ColeccionMultiple.cs" />
     <Compile Include="Comparable.cs" />
@@ -66,6 +68,8 @@
     <Compile Include="MDPI.cs" />
     <Compile Include="Numero.cs" />
     <Compile Include="Observer.cs" />
+    <Compile Include="Ordenable.cs" />
+    <Compile Include="OrdenEnAula.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Pila.cs" />
     <Compile Include="Program.cs" />

@@ -15,6 +15,6 @@ namespace Practica5 {
 		Comparable maximo(); 
 		void agregar(Comparable objeto); 
 		bool contiene(Comparable objeto); 
-		Iterador crearIterador();	
+		Iterador crearIterador();
 	}
 }

@@ -9,9 +9,10 @@ using System;
 
 namespace Practica5 {
 	
-	public class AlumnoMuyEstudioso : Alumno, IAlumno {
+	public class AlumnoMuyEstudioso : Alumno {
 		
 		public AlumnoMuyEstudioso() : base () {}
+		public AlumnoMuyEstudioso(string nombre, int dni, int prom, EstrategiaDeComparacion e) : base (nombre, dni,prom,e) {}
 		
 		public AlumnoMuyEstudioso(string n, int l, int c) : base (n,l,c) {}
 		

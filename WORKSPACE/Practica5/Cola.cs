@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Practica5 {
 
-	public class Cola : Coleccionable<Comparable>, Iterable { //FIFO
+	public class Cola : Coleccion, Coleccionable<Comparable>, Iterable { // (abstract class Coleccion : <<Ordenable>>)
 		
 		private List<Comparable> elementos;
 	
@@ -22,7 +22,16 @@ namespace Practica5 {
 		public Cola () {
 			elementos = new List<Comparable>();  
 		}
-		
+
+		public void agregar(Comparable objeto) { //Ordenable
+			if (Empty()) orden1.ejecutar();
+				
+			orden2.ejecutar(objeto);
+			elementos.Add(objeto);
+			
+			if (elementos.Count == 40) orden3.ejecutar();				
+		}
+
 		//Iterable
 		public Iterador crearIterador() {
 			return new IteradorDeCola(this);
@@ -67,9 +76,7 @@ namespace Practica5 {
 			return max; 
 		}		
 	
-		public void agregar(Comparable objeto) {
-			elementos.Add(objeto);	
-		}
+
 
 		public bool contiene(Comparable objeto) { 
 			bool cont = false;

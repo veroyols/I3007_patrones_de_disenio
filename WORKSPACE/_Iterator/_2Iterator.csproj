@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
-    <ProjectGuid>{F43E91BA-74B7-4987-9114-165AE202894A}</ProjectGuid>
+    <ProjectGuid>{9B0D4BE5-A003-4C25-9B2C-BADC3061E424}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_Observer</RootNamespace>
-    <AssemblyName>_Observer</AssemblyName>
+    <RootNamespace>_Iterator</RootNamespace>
+    <AssemblyName>_2Iterator</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -45,7 +45,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Observer.cs" />
+    <Compile Include="Impresora.cs" />
+    <Compile Include="Iteradores.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

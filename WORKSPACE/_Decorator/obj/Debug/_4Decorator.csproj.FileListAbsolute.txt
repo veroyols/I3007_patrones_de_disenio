@@ -1,0 +1,5 @@
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Decorator\bin\Debug\_4Decorator.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Decorator\bin\Debug\_4Decorator.pdb
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Decorator\obj\Debug\_4Decorator.csprojResolveAssemblyReference.cache
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Decorator\obj\Debug\_4Decorator.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_Decorator\obj\Debug\_4Decorator.pdb

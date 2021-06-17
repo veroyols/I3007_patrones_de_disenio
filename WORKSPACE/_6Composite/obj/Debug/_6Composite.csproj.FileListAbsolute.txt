@@ -1,0 +1,4 @@
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_6Composite\bin\Debug\_6Composite.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_6Composite\bin\Debug\_6Composite.pdb
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_6Composite\obj\Debug\_6Composite.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_6Composite\obj\Debug\_6Composite.pdb

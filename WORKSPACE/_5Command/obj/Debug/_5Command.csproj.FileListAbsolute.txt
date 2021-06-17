@@ -1,0 +1,4 @@
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_5Command\bin\Debug\_5Command.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_5Command\bin\Debug\_5Command.pdb
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_5Command\obj\Debug\_5Command.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_5Command\obj\Debug\_5Command.pdb
