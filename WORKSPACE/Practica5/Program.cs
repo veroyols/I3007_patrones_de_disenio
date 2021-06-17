@@ -38,12 +38,12 @@ namespace Practica5 {
 			}//TODO no se ordenan por calificacion
 			teacher.teachingAClass();
 			
-			Conjunto conjunto = new Conjunto(); 
+			Diccionario diccionario = new Diccionario();
 			Aula aula = new Aula();
-			conjunto.setOrdenInicio(new OrdenInicio(aula));
-			conjunto.setOrdenLlegaAlumno(new OrdenLlegaAlumno(aula));
-			conjunto.setOrdenAulaLlena(new OrdenAulaLlena(aula));
-			Diccionario diccionario = new Diccionario(conjunto);
+			diccionario.setOrdenInicio(new OrdenInicio(aula));
+			diccionario.setOrdenLlegaAlumno(new OrdenLlegaAlumno(aula));
+			diccionario.setOrdenAulaLlena(new OrdenAulaLlena(aula));
+
 			llenar(diccionario, 1); //alumno
 			llenar(diccionario, 0); //muy estudioso
 			

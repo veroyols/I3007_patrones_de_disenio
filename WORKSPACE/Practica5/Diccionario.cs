@@ -10,9 +10,27 @@ using System;
 
 namespace Practica5 {
 
-	public class Diccionario : Coleccionable<Comparable>, Iterable { 
+	public class Diccionario : Ordenable, Coleccionable<Comparable>, Iterable { 
 		
 		private Conjunto conjunto = new Conjunto();
+		
+		//Ordenable
+		public void setOrdenInicio(OrdenEnAula1 o) {			
+			conjunto.setOrdenInicio (o);
+			return; 
+		}
+		public void setOrdenLlegaAlumno(OrdenEnAula2 o) {
+			conjunto.setOrdenLlegaAlumno (o);
+			return; 
+		}
+		public void setOrdenAulaLlena(OrdenEnAula1 o) {
+			conjunto.setOrdenAulaLlena (o);
+			return; 
+		}
+		public void agregar(Comparable valor) { 
+			conjunto.agregar(new ClaveValor(valor));
+			return;
+		}		
 		
 		public Conjunto Conjunto {
 			set { conjunto = value; }
@@ -60,16 +78,6 @@ namespace Practica5 {
 			}
 			return alucno;
 		}
-
-		public void agregar(Comparable valor) { 
-			conjunto.agregar(new ClaveValor(valor));
-			return;
-		}
-
-		public void agregar(Object valor) { 
-			conjunto.Elementos.Add(new ClaveValor(valor));
-			return;
-		}		
 				
 		public Object valorDe(Comparable clave) { 
 			for (int i = 0; i < conjunto.Elementos.Count; i++) {

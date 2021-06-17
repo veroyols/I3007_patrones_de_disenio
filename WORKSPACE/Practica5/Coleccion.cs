@@ -26,5 +26,6 @@ namespace Practica5 {
 			this.orden3 = o;
 			return; 
 		}
+		
 	}
 }

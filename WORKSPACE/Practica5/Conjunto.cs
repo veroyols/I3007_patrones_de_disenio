@@ -45,14 +45,14 @@ namespace Practica5 {
 		}
 
 		//IColeccionable
-		public void agregar (Comparable comparable) { //sin repeticion
-			if (pertenece(comparable)) {
+		public void agregar (Comparable cv) { //sin repeticion
+			if (pertenece(cv)) {
 				Console.WriteLine("El elemento ya pertenece a la coleccion.");
 				return;
 			}
 			if (Empty()) orden1.ejecutar();
-			orden2.ejecutar(comparable);
-			elementos.Add(comparable);
+			orden2.ejecutar((Comparable) (((ClaveValor)cv).getvalor) );
+			elementos.Add(cv);
 			if (elementos.Count == 40) orden3.ejecutar();				
 //			Console.WriteLine("El elemento ha sido agregado a la coleccion. ");
 			return;
