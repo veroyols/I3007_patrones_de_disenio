@@ -1,0 +1,4 @@
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_ChainOfResponsability\bin\Debug\_7ChainOfResponsability.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_ChainOfResponsability\bin\Debug\_7ChainOfResponsability.pdb
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_ChainOfResponsability\obj\Debug\_7ChainOfResponsability.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\_ChainOfResponsability\obj\Debug\_7ChainOfResponsability.pdb

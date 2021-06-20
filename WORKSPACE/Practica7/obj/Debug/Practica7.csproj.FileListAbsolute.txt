@@ -1,0 +1,4 @@
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica7\bin\Debug\Practica7.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica7\bin\Debug\Practica7.pdb
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica7\obj\Debug\Practica7.exe
+C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica7\obj\Debug\Practica7.pdb

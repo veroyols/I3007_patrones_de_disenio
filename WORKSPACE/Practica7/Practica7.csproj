@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{259F4CAC-D886-43A0-BDE1-A22887A1130E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Practica7</RootNamespace>
+    <AssemblyName>Practica7</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdaptadorDeStudents.cs" />
+    <Compile Include="Alumno.cs" />
+    <Compile Include="AlumnoCompuesto.cs" />
+    <Compile Include="AlumnoMuyEstudioso.cs" />
+    <Compile Include="AlumnoProxy.cs" />
+    <Compile Include="Aula.cs" />
+    <Compile Include="ClaveValor.cs" />
+    <Compile Include="Cola.cs" />
+    <Compile Include="Coleccion.cs" />
+    <Compile Include="Coleccionable.cs" />
+    <Compile Include="ColeccionMultiple.cs" />
+    <Compile Include="Comparable.cs" />
+    <Compile Include="Conjunto.cs" />
+    <Compile Include="Diccionario.cs" />
+    <Compile Include="EstrategiaDeComparacion.cs" />
+    <Compile Include="FabricaDeComparables.cs" />
+    <Compile Include="Gerente.cs" />
+    <Compile Include="IAlumno.cs" />
+    <Compile Include="Informe.cs" />
+    <Compile Include="Iteradores.cs" />
+    <Compile Include="Manejador.cs" />
+    <Compile Include="MDPI.cs" />
+    <Compile Include="Numero.cs" />
+    <Compile Include="Observer.cs" />
+    <Compile Include="Ordenable.cs" />
+    <Compile Include="OrdenEnAula.cs" />
+    <Compile Include="Persona.cs" />
+    <Compile Include="Pila.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Template Method.cs" />
+    <Compile Include="Vendedor.cs" />
+    <Compile Include="_Decorator.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
