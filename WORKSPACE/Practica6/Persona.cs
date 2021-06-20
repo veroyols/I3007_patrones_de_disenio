@@ -16,7 +16,8 @@ namespace Practica6 {
 		protected string nombre;
 		protected int dni;
 		protected EstrategiaDeComparacion estrategia;
-		protected List<int> cartas;
+		protected List<int> cartas = new List<int> (); //Practica 6
+		protected int puntos;
 		
 		protected GeneradorDeDatosAleatorio generador = new GeneradorDeDatosAleatorio();
 		public List<int> getCartas {

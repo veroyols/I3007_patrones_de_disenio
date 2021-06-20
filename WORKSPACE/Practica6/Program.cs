@@ -29,9 +29,9 @@ namespace Practica6 {
 			
 			Persona j1 = new Persona();
 			Persona j2 = new Persona();
-			Console.WriteLine("1 {0} \n2 {1}",j1,j2);
+			Console.WriteLine("Jugadores... \n1 {0} \n2 {1}",j1,j2);
 			
-			Template_Method template = new JuegoDeCartas();
+			Template_Method template = new JuegoDeCartas(99);
 			
 			Persona ganador = template.pasos(j1,j2);
 			Console.WriteLine("El ganador es {0}", ganador);
