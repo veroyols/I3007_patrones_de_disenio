@@ -7,6 +7,7 @@
  */
 using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace Practica7 {
 	
@@ -114,7 +115,8 @@ namespace Practica7 {
 
 	public class LectorDeArchivos : Manejador {
 		
-		private const string ruta_archivo = @"C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica7\bin\Debug\datos.txt";
+//		private const string ruta_archivo = @"C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica7\bin\Debug\datos.txt";
+		private const string ruta_archivo = @"C:\Users\veros\Documents\GitHub\I3007\WORKSPACE\Practica7\bin\Debug\nuevo.txt";
 		
 		private StreamReader lector_de_archivos;
 		
@@ -127,11 +129,23 @@ namespace Practica7 {
 			return int.Parse(linea.Substring(0, linea.IndexOf('\t'))) * max;
 		}
 		
-		public override string stringDesdeArchivo(int cant){
-			string linea = lector_de_archivos.ReadLine();
-			linea = linea.Substring(linea.IndexOf('\t')+1);
-			cant = Math.Min(cant, linea.Length);
-			return linea.Substring(0, cant);
+		public override string stringDesdeArchivo(int indice){
+			List<string> alumnos = new List<string>();
+			string linea; 
+			while (lector_de_archivos.Peek() > -1){ //-1 si no hay caracteres para leer
+				linea = lector_de_archivos.ReadLine();
+				alumnos.Add(linea);
+			}
+			lector_de_archivos.Close();
+			if (indice >= alumnos.Count) {
+				return null;
+			}
+			else {
+				return alumnos[indice];
+			}
+//			linea = linea.Substring(linea.IndexOf('\t')+1);
+//			cant = Math.Min(cant, linea.Length);
+//			return linea.Substring(0, cant);
 		}
 	}
 }

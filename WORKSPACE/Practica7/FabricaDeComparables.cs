@@ -51,7 +51,7 @@ namespace Practica7 {
 			}
 		return fabrica.crearComparablePorTeclado();
 		}
-		public static Comparable crearPorArchivo (int queComparable){
+		public static Comparable crearPorArchivo (int queComparable, int index){
 			FabricaDeComparables fabrica = null;
 			switch(queComparable){
 				case ALUMNO: 
@@ -64,12 +64,12 @@ namespace Practica7 {
 			        fabrica = new FabricaDeVendedor();
 			        break;
 			}
-		return fabrica.crearComparablePorArchivo();
+		return fabrica.crearComparablePorArchivo(index);
 		}
 		
 		public abstract Comparable crearComparableAleatorio();
 		public abstract Comparable crearComparablePorTeclado();		
-		public abstract Comparable crearComparablePorArchivo();		
+		public abstract Comparable crearComparablePorArchivo(int index);		
 	}
 	
 	public class FabricaDeAlumnoEstudioso : FabricaDeComparables{
@@ -86,12 +86,10 @@ namespace Practica7 {
 			//estrategia por defecto en Alumno
 			return new AlumnoMuyEstudioso(nombre,dni,promedio);
 		}
-		public override Comparable crearComparablePorArchivo(){
-			string nombre = datos.getManejador.stringDesdeArchivo(10);
-			int dni = datos.getManejador.numeroDesdeArchivo(10);
-			int promedio = datos.getManejador.numeroDesdeArchivo(1);
-			//estrategia por defecto en Alumno
-			return new AlumnoMuyEstudioso(nombre,dni,promedio);
+		public override Comparable crearComparablePorArchivo(int index){
+			string linea = datos.getManejador.stringDesdeArchivo(index);
+			string[] alumno = linea.Split(' ');	//legajo nombre dni promedio calificacion
+			return new AlumnoMuyEstudioso(int.Parse(alumno[0]),alumno[1],int.Parse(alumno[2]),double.Parse(alumno[3]),int.Parse(alumno[4]));
 		}		
 	}
 	
@@ -109,12 +107,10 @@ namespace Practica7 {
 			//estrategia por defecto en Alumno
 			return new Alumno(nombre,dni,promedio);
 		}		
-		public override Comparable crearComparablePorArchivo(){
-			string nombre = datos.getManejador.stringDesdeArchivo(10);
-			int dni = datos.getManejador.numeroDesdeArchivo(10);
-			int promedio = datos.getManejador.numeroDesdeArchivo(1);
-			//estrategia por defecto en Alumno
-			return new Alumno(nombre,dni,promedio);
+		public override Comparable crearComparablePorArchivo(int index){
+			string linea = datos.getManejador.stringDesdeArchivo(index);
+			string[] alumno = linea.Split(' ');	//legajo nombre dni promedio calificacion
+			return new Alumno(int.Parse(alumno[0]),alumno[1],int.Parse(alumno[2]),double.Parse(alumno[3]),int.Parse(alumno[4]));
 		}		
 	}
 		
@@ -126,7 +122,7 @@ namespace Practica7 {
 			Console.WriteLine("Ingrese numero entero");
 			return new Numero(datos.getManejador.numeroPorTeclado());
 		}
-		public override Comparable crearComparablePorArchivo(){
+		public override Comparable crearComparablePorArchivo(int index){
 			Console.WriteLine("Leyendo desde archivo");
 			return new Numero(datos.getManejador.numeroDesdeArchivo(1000));
 		}
@@ -149,12 +145,10 @@ namespace Practica7 {
 			//estrategia por defecto en Bonus
 			return new Vendedor(nombre,dni,sueldo);
 		}
-		public override Comparable crearComparablePorArchivo () {
-			string nombre = datos.getManejador.stringDesdeArchivo(10);
-			int dni = datos.getManejador.numeroDesdeArchivo(10);
-			int sueldo = datos.getManejador.numeroDesdeArchivo(4);
-			//estrategia por defecto en Alumno
-			return new Vendedor(nombre,dni,sueldo);
+		public override Comparable crearComparablePorArchivo (int index) {
+			string linea = datos.getManejador.stringDesdeArchivo(index);
+			string[] vendedor = linea.Split(' ');	//legajo nombre dni promedio calificacion
+			return new Vendedor(vendedor[1],int.Parse(vendedor[2]),10000*( int.Parse(vendedor[3]) ));
 		}
 	}	
 }

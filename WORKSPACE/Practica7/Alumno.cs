@@ -32,6 +32,13 @@ namespace Practica7 {
 			this.calificacion = calificacion;
 			this.nombre = nombre;
 		}
+		public Alumno( int legajo, string nombre, int dni, double promedio, int calificacion) : base (nombre,dni) { // proxy
+			this.legajo = legajo;
+			this.estrategia = new PorCalificacion();
+			this.promedio = promedio;
+			this.calificacion = calificacion;
+		}		
+		
 		public Alumno(string n , int d, double p) : base (n,d) {
 			this.promedio = p;
 			this.legajo = num;
@@ -77,7 +84,7 @@ namespace Practica7 {
 		}
 		
 		public override string ToString() {
-			return string.Format(">> Id{0} {1} DNI {2} (Nota: {3}) - Compara por {4} = {5}", legajo, getNombre(), getDni, promedio, estrategia, calificacion);
+			return string.Format("{0} {1} {2} {3} {4}", legajo, getNombre(), getDni, promedio, calificacion);
 		}
 	}		
 }
