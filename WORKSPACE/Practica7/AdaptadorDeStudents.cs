@@ -15,7 +15,7 @@ namespace Practica7 {
 			get { return iAlumno; }
 			set { iAlumno = value; }
 		}
-		public AdaptadorDeStudent2 (AlumnoCompuesto iAlumno) {
+		public AdaptadorDeStudent2 (IAlumno iAlumno) {
 			this.iAlumno = iAlumno;
 		}
 		public string getName() {

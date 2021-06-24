@@ -16,43 +16,49 @@ namespace Practica7 {
 			
 			Console.WriteLine("Hello World!");
 				
-			ObtenerDatos datos = new ObtenerDatos();			
-			Console.WriteLine(datos.getManejador.stringDesdeArchivo(19));
+//			ObtenerDatos datos = new ObtenerDatos();			
+//			Console.WriteLine(datos.getManejador.stringDesdeArchivo(19));
 			
 			Pila pila = new Pila();
 			Aula aula = new Aula();
 			pila.setOrdenInicio(new OrdenInicio(aula));
 			pila.setOrdenLlegaAlumno(new OrdenLlegaAlumno(aula));
 			pila.setOrdenAulaLlena(new OrdenAulaLlena(aula));
-			llenarDesdeArchivo(pila,1); // 1 = alumnos
+			
+			llenarDesdeArchivo(pila,0); // 1 = alumnos
+//			llenar(pila,0);
 			
 			Console.WriteLine("IMPRIMIR PILA");
 			foreach (Alumno element in pila.Elementos) {
 				Console.WriteLine(element);
 			}
+			Console.ReadKey(true);
 			
-//			GuardarPila(pila); //nuevo.txt
+			Console.WriteLine("GUARDAR PILA");
+			GuardarPila(pila); //nuevo.txt
 				
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
 		}
 		
 		public static void GuardarPila (Coleccionable<Comparable> coleccion) {
-			StreamWriter archivo = new StreamWriter("nuevo.txt", true);
-			Iterador itera = coleccion.crearIterador();
-			while (!itera.fin()) {
+			StreamWriter archivo = new StreamWriter("nuevo.txt", false);
+			Iterador itera = coleccion.crearIterador();		
+			for (int i = 0; i < coleccion.cuantos(); i++) {
 				archivo.WriteLine(itera.actual());
-				itera.siguiente();				
+				itera.siguiente();
 			}
 			archivo.Close();			
 		}
 		
 		public static void llenarDesdeArchivo(Coleccionable<Comparable> coleccion, int queComparable){ //0 AlEst, 1Al, 2Num, 3Vend
 			Iterador iteradorDeColeccion = coleccion.crearIterador();
-			for (int i = 0; i < 20; i++) { //E6
-				Comparable a = FabricaDeComparables.crearPorArchivo(queComparable, i);
+			int i = 0;
+			Comparable a = FabricaDeComparables.crearPorArchivo(queComparable, i++);
+			while (a !=null) {
 				coleccion.agregar(a);
 				Console.WriteLine(a);
+				a = FabricaDeComparables.crearPorArchivo(queComparable, i++);
 			}
 		}	
 		public static void llenar(Coleccionable<Comparable> coleccion, int queComparable){ //0 AlEst, 1Al, 2Num, 3Vend

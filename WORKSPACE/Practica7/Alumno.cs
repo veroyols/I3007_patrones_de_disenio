@@ -10,10 +10,10 @@ using System;
 namespace Practica7 {
 	
 	public class Alumno : Persona, IAlumno { 
-		private static int num = 100;
-		private int legajo;
-		private double promedio;
-		private int calificacion;
+		protected static int num = 100;
+		protected int legajo;
+		protected double promedio;
+		protected int calificacion;
 
 		public double getPromedio {
 			get { return promedio;}
@@ -32,7 +32,7 @@ namespace Practica7 {
 			this.calificacion = calificacion;
 			this.nombre = nombre;
 		}
-		public Alumno( int legajo, string nombre, int dni, double promedio, int calificacion) : base (nombre,dni) { // proxy
+		public Alumno(int legajo, string nombre, int dni, double promedio, int calificacion) : base (nombre,dni) { // proxy
 			this.legajo = legajo;
 			this.estrategia = new PorCalificacion();
 			this.promedio = promedio;

@@ -4,27 +4,24 @@
  * Fecha: 21/6/2021
  * Hora: 00:16
  * 
- * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
  */
 using System;
 
-namespace Practica7
-{
-	/// <summary>
-	/// Description of Singleton.
-	/// </summary>
-	public sealed class Singleton
-	{
-		private static Singleton instance = new Singleton();
+namespace Practica7 {
+	
+	public class Singleton {
 		
-		public static Singleton Instance {
-			get {
-				return instance;
-			}
+		private static Singleton unico = null;
+		
+		public static Singleton getUnico {
+			get { return unico; }
 		}
 		
-		private Singleton()
-		{
+		private Singleton() {}
+		
+		public static Singleton getInstance () {
+			if (unico == null) unico = new Singleton();
+			return unico;
 		}
 	}
 }

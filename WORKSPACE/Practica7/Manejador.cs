@@ -25,7 +25,6 @@ namespace Practica7 {
 			m = new LectorDeArchivos(m);
 			return m;
 		}		
-		
 	}
 	
 	public abstract class Manejador {
@@ -73,11 +72,10 @@ namespace Practica7 {
 		}
 		
 		virtual public string stringDesdeArchivo(int cant){
-			string st = "";
 			if (sucesor != null) {
-				st = sucesor.stringDesdeArchivo(cant);
+				return sucesor.stringDesdeArchivo(cant);
 			}
-			return st;
+			return null;
 		}		
 	}
 	
@@ -121,7 +119,7 @@ namespace Practica7 {
 		private StreamReader lector_de_archivos;
 		
 		public LectorDeArchivos(Manejador manejador) : base(manejador) {
-			lector_de_archivos = new StreamReader(ruta_archivo);
+//			lector_de_archivos = new StreamReader(ruta_archivo,true);
 		}
 		
 		public override int numeroDesdeArchivo(int max){
@@ -130,6 +128,7 @@ namespace Practica7 {
 		}
 		
 		public override string stringDesdeArchivo(int indice){
+			lector_de_archivos = new StreamReader(ruta_archivo,false);
 			List<string> alumnos = new List<string>();
 			string linea; 
 			while (lector_de_archivos.Peek() > -1){ //-1 si no hay caracteres para leer
@@ -137,7 +136,7 @@ namespace Practica7 {
 				alumnos.Add(linea);
 			}
 			lector_de_archivos.Close();
-			if (indice >= alumnos.Count) {
+			if (indice == alumnos.Count) {
 				return null;
 			}
 			else {

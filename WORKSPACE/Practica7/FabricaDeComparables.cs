@@ -39,7 +39,10 @@ namespace Practica7 {
 		public static Comparable crearPorTeclado (int queComparable){
 			FabricaDeComparables fabrica = null;
 			switch(queComparable){
-				case ALUMNO: 
+				case ALUMNOESTUDIOSO:
+			        fabrica = new FabricaDeAlumnoEstudioso();
+			        break;
+				case ALUMNO:
 			        fabrica = new FabricaDeAlumno();
 			        break;
 			    case NUMERO:
@@ -54,7 +57,10 @@ namespace Practica7 {
 		public static Comparable crearPorArchivo (int queComparable, int index){
 			FabricaDeComparables fabrica = null;
 			switch(queComparable){
-				case ALUMNO: 
+				case ALUMNOESTUDIOSO:
+			        fabrica = new FabricaDeAlumnoEstudioso();
+			        break;
+				case ALUMNO:
 			        fabrica = new FabricaDeAlumno();
 			        break;
 			    case NUMERO:
@@ -88,8 +94,11 @@ namespace Practica7 {
 		}
 		public override Comparable crearComparablePorArchivo(int index){
 			string linea = datos.getManejador.stringDesdeArchivo(index);
-			string[] alumno = linea.Split(' ');	//legajo nombre dni promedio calificacion
-			return new AlumnoMuyEstudioso(int.Parse(alumno[0]),alumno[1],int.Parse(alumno[2]),double.Parse(alumno[3]),int.Parse(alumno[4]));
+			if (linea !=null) {
+				string[] alumno = linea.Split(' ');	//legajo nombre dni promedio calificacion
+				return new AlumnoMuyEstudioso(int.Parse(alumno[0]),alumno[1],int.Parse(alumno[2]),double.Parse(alumno[3]),int.Parse(alumno[4]));
+			}
+			return null;
 		}		
 	}
 	
@@ -109,8 +118,11 @@ namespace Practica7 {
 		}		
 		public override Comparable crearComparablePorArchivo(int index){
 			string linea = datos.getManejador.stringDesdeArchivo(index);
-			string[] alumno = linea.Split(' ');	//legajo nombre dni promedio calificacion
-			return new Alumno(int.Parse(alumno[0]),alumno[1],int.Parse(alumno[2]),double.Parse(alumno[3]),int.Parse(alumno[4]));
+			if (linea != null) { 
+				string[] alumno = linea.Split(' ');	//legajo nombre dni promedio calificacion
+				return new Alumno(int.Parse(alumno[0]),alumno[1],int.Parse(alumno[2]),double.Parse(alumno[3]),int.Parse(alumno[4]));
+			}
+			return null;
 		}		
 	}
 		
