@@ -1,4 +1,4 @@
-# I3007
+# I3007 Metodologias de Programacion I (2021 1er cuatrimestre)
 Practica 1 - Repaso de POO. Interfaces.
 
 Practica 2 - Patrones Strategy e Iterator.
